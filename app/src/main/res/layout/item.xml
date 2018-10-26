@@ -1,36 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="center"
-    android:layout_width="400dp"
-    android:layout_height="400dp">
+    android:layout_width="350dp"
+    android:layout_height="350dp"
+    android:clipToPadding="false"
+    android:background="@color/grey">
 
-    <TextView
-        android:id="@+id/helloText"
-        android:textSize="40sp"
-        android:textColor="@android:color/white"
-        android:background="#ed0c0c"
-        android:gravity="center"
-        android:fontFamily="sans-serif-thin"
-        tools:text="hello"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <android.support.v7.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_gravity="center"
+        android:paddingLeft="40sp"
+        android:paddingRight="40sp"
+        android:paddingBottom="40sp"
+        android:paddingTop="40sp"
+        android:elevation="3dp"
+        android:id="@+id/cardView">
+        <FrameLayout
+            android:layout_width="350dp"
+            android:layout_height="350dp">
+            <ImageView
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:id="@+id/image"
+                android:src="@drawable/superfly" />
 
-    <View
-        android:id="@+id/item_swipe_left_indicator"
-        android:alpha="0"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_margin="10dp"
-        android:background="#A5F" />
+            <TextView
+                android:id="@+id/songName"
+                android:textSize="40sp"
+                android:textColor="@android:color/black"
+                android:background="#ed0"
+                android:gravity="center"
+                android:fontFamily="sans-serif-thin"
+                tools:text="Superfly"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
 
-    <View
-        android:id="@+id/item_swipe_right_indicator"
-        android:alpha="0"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_margin="10dp"
-        android:layout_gravity="right"
-        android:background="#5AF" />
+        <View
+            android:id="@+id/item_swipe_left_indicator"
+            android:alpha="0"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="10dp"
+            android:background="#A5F" />
 
-</FrameLayout>
+        <View
+            android:id="@+id/item_swipe_right_indicator"
+            android:alpha="0"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_margin="10dp"
+            android:layout_gravity="right"
+            android:background="#5AF" />
+    </android.support.v7.widget.CardView>
+
+
+</LinearLayout>

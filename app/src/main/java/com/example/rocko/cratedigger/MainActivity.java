@@ -29,12 +29,12 @@ public class MainActivity extends AppCompatActivity {
         al.add("Best Friend");
         al.add("Fly Like an Eagle");
         al.add("Respect");
-        al.add("Chicken Little Theme Song");
+        al.add("Come & Get Your Love");
         al.add("Musicawi Sikt");
         al.add("Too Late");
         al.add("Move On Up");
 
-        arrayAdapter = new ArrayAdapter<>(this, R.layout.item, R.id.helloText, al );
+        arrayAdapter = new ArrayAdapter<>(this, R.layout.item, R.id.songName, al );
 
         SwipeFlingAdapterView flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
 
