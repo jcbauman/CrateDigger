@@ -2,15 +2,15 @@
 Tinder for Music Recommendations
 
 By Jack Bauman, Carly, Young Choe, and Ismael
-Introduction
+#Introduction
 This mobile application is a system for music lovers to quickly and easily discover new music. Alike a dating app where the user can swipe either right or left according to their preferences, Crate Digger allow users the freedom to discover new music at ease in this similar fashion. The app will present a constant stream of music recommendations, presented with album artwork, information, and a snippet of the song, and our algorithm will obtain further songs based on related artists of the songs users have liked. With the Spotify Android SDK, calls to the powerful Spotify API provide all the content we will pull from, and we will also provide an easy avenue for users to save the songs they are enjoy to their Spotify libraries.
-Purpose
+#Purpose
 There are millions upon millions of songs and artists accessible online, including plenty of amazing tracks that lie just outside our own realm of musical knowledge. Our app aims to get users out of a musical rut and aid them in finding a constant stream of new music and rarities based on their relationships with music they already like.
-Main Features
+#Main Features
 ● Crate Digger will provide a constant stream of music recommendations to a user along with an easy and intuitive way to rate the music.
 ● Users can easily view previously liked songs, save them to your Spotify library, and share them with friends.
 ● Users can view statistics about your music taste, as well as tweak the algorithm directly in order to make your recommendations more relevant.
-App Flow
+#App Flow
 The app will consist of 3 main views.
 1.) Main Music View​ - This will be the primary view of the app, where the user is presented with music in a simple and visually pleasing way, and will be able to give feedback on whether they like it. The app presents one song at a time to the user, complete with the track’s album artwork, information (artist, name, year), and plays a 30-second sample snippet to the user. The view consists of physical “like” and “dislike” buttons, as well as swiping “left” or “right.” Liked songs are added to the user’s saved
  music list, and its related artists and songs are added to the pool of next presentable songs.
@@ -26,5 +26,5 @@ High Level Technical Architecture
 ● A hash table to store songs (by Spotify URI) we have already shown to users.
 ● A dictionary to store liked songs and their metadata.
 ● Spotify SDK framework embedded.
-Libraries
-We will be using Android Studio for the app’s development. Crate Digger will integrate Spotify’s open source, free-to-use Android Software Development Kit and obtain music metadata through calls to the Spotify API. To call the Spotify API from our app, we will use the Spotify Remote Library SDK.
+#Libraries
+We will be using Android Studio for the app’s development. Crate Digger will integrate Spotify’s open source, free-to-use Android Software Development Kit and obtain music metadata through calls to the Spotify API. To call the Spotify API from our app, we will use the Spotify Remote Library SDK.  We will use the SwipeCards library to help set up Tinder features.
