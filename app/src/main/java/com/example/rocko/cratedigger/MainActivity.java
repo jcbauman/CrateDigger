@@ -10,6 +10,7 @@ import com.spotify.android.appremote.api.ConnectionParams;
 import com.spotify.android.appremote.api.Connector;
 import com.spotify.android.appremote.api.SpotifyAppRemote;
 import com.spotify.protocol.client.Subscription;
+import com.spotify.protocol.types.Album;
 import com.spotify.protocol.types.PlayerState;
 import com.spotify.protocol.types.Track;
 
@@ -17,8 +18,14 @@ import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
 
+import kaaes.spotify.webapi.android.SpotifyApi;
+import kaaes.spotify.webapi.android.SpotifyService;
+import retrofit.Callback;
+import retrofit.client.Response;
+
 
 public class MainActivity extends AppCompatActivity {
+
 
     private ArrayList<String> al;
     private ArrayAdapter<String> arrayAdapter;
@@ -33,6 +40,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        SpotifyApi api = new SpotifyApi();
+        api.setAccessToken("BQDKZmqNvqvHzuXbTK8nS2MVlWOEpsWm-HtFhl7ZJh7B8jpDCl0oIHkvq1qSh-ZQJ70WCCgyCRAfxJ8rpaChdMjrxdB1sUAc2CbFmpJlgEC506m528Az4x38i0WBYjZuiGdkuJzEdgCFFhcY");
+        SpotifyService spotify = api.getService();
+        spotify.getAlbum("2dIGnmEIy1WZIcZCFSj6i8", new Callback<Album>() {
+            @Override
+            public void success(Album album, Response response) {
+                Log.d("Album success", album.name);
+            }
+
+            @Override
+            public void failure(RetrofitError error) {
+                Log.d("Album failure", error.toString());
+            }
+        });
 
         al = new ArrayList<>();
         al.add("Superfly");
