@@ -4,7 +4,9 @@ import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 import com.spotify.android.appremote.api.ConnectionParams;
@@ -30,21 +32,27 @@ import retrofit.client.Response;
 public class MainActivity extends AppCompatActivity {
 
 
+    //UI
+    ImageButton dislikeBtn;
+    ImageButton likeBtn;
+    SwipeFlingAdapterView flingContainer;
+
+    //Hardcoded song metadata
     private Card cards_data[];
     private ArrayList<String> al;
     private ArrayList<String> audioSample;
     private ArrayList<String> artwork;
+    ListView listview;
+    List<Card> rowItems;
 
     private CardArrayAdapter arrayAdapter;
 
+    //Spotify API data
     private int i;
     private static final String CLIENT_ID = "b25d7e2520a046158aaaa51094859686";
     private static final String REDIRECT_URI = "https://jcbauman.portfoliobox.net/";
     private SpotifyAppRemote mSpotifyAppRemote;
 
-
-    ListView listview;
-    List<Card> rowItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,16 +76,6 @@ public class MainActivity extends AppCompatActivity {
 //        });
 
 
-        al = new ArrayList<>();
-        al.add("Superfly");
-        al.add("Best Friend");
-        al.add("Fly Like an Eagle");
-        al.add("Respect");
-        al.add("Come & Get Your Love");
-        al.add("Musicawi Silt");
-        al.add("Too Late");
-        al.add("Move On Up");
-
 
 
         rowItems = new ArrayList<Card>();
@@ -92,12 +90,15 @@ public class MainActivity extends AppCompatActivity {
         rowItems.add(item);
         item = new Card("Eminem", "Without Me","https://i.scdn.co/image/d6aebc8455b303340e188c20fd4f562a2ab980e0", "https://p.scdn.co/mp3-preview/c2b67567f040b2c924aed143ba21748b7ce092f6?cid=774b29d4f13844c495f206cafdad9c86");
         rowItems.add(item);
+        item = new Card("Steve Watson", "Born to Boogie", "https://i.scdn.co/image/a501f65666e035306dcbb1411ae855270f1acbd7","https://p.scdn.co/mp3-preview/4819fcee8a3258b7a47d9d8d9eb328ddb7e89971?cid=774b29d4f13844c495f206cafdad9c86");
+        rowItems.add(item);
 
         arrayAdapter = new CardArrayAdapter(this, R.layout.item, rowItems);
         //CardArrayAdapter.notifyDataSetChanged();
-        SwipeFlingAdapterView flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
 
-
+        //---------------------------------------------
+        //Swipe Card controls
+        flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
         flingContainer.setAdapter(arrayAdapter);
         flingContainer.setFlingListener(new SwipeFlingAdapterView.onFlingListener() {
             @Override
@@ -124,10 +125,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAdapterAboutToEmpty(int itemsInAdapter) {
                 // Ask for more data here
-                al.add("Next Song".concat(String.valueOf(i)));
-                arrayAdapter.notifyDataSetChanged();
-                Log.d("LIST", "notified");
-                i++;
             }
 
             @Override
@@ -137,14 +134,27 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        // Optionally add an OnItemClickListener
-        flingContainer.setOnItemClickListener(new SwipeFlingAdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClicked(int itemPosition, Object dataObject) {
-                Toast.makeText(MainActivity.this, "click", Toast.LENGTH_SHORT).show();
+//        // Optionally add an OnItemClickListener
+//        flingContainer.setOnItemClickListener(new SwipeFlingAdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClicked(int itemPosition, Object dataObject) {
+//                Toast.makeText(MainActivity.this, "click", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
+        dislikeBtn = (ImageButton) findViewById(R.id.left);
+        likeBtn = (ImageButton) findViewById(R.id.right);
+
+        dislikeBtn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                flingContainer.getTopCardListener().selectLeft();
             }
         });
-
+        likeBtn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                flingContainer.getTopCardListener().selectRight();
+            }
+        });
     }
 
     @Override
@@ -206,11 +216,7 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-//    static void makeToast(Context ctx, String s){
-//        Toast.makeText(ctx, s, Toast.LENGTH_SHORT).show();
-//    }
-//
-//
+
 //    @OnClick(R.id.right)
 //    public void right() {
 //        /**

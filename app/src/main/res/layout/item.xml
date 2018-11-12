@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_gravity="center"
+    android:layout_gravity="center_horizontal"
     android:layout_width="350dp"
     android:layout_height="450dp"
     android:clipToPadding="false">
@@ -9,7 +9,6 @@
     <android.support.v7.widget.CardView
         android:layout_width="350dp"
         android:layout_height="450dp"
-        android:layout_gravity="center"
         android:paddingLeft="5sp"
         android:paddingRight="5sp"
         android:paddingBottom="5sp"
@@ -33,11 +32,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#ed0"
-                android:fontFamily="sans-serif-thin"
+                android:fontFamily="sans-serif"
                 android:gravity="center"
                 android:textColor="@android:color/black"
                 android:textSize="25sp"
-                tools:text="Superfly" />
+                android:layout_marginBottom="48dp"
+                tools:text="Song Name" />
         </LinearLayout>
 
         <View
