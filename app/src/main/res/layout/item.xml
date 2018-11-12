@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_gravity="center"
     android:layout_width="350dp"
     android:layout_height="350dp"
     android:clipToPadding="false"
-    android:background="@color/grey">
+    android:background="#C90814">
 
     <android.support.v7.widget.CardView
         android:layout_width="350dp"
@@ -17,14 +17,14 @@
         android:paddingTop="40sp"
         android:elevation="3dp"
         android:id="@+id/cardView">
-        <FrameLayout
+        <LinearLayout
             android:layout_width="350dp"
             android:layout_height="350dp">
-            <ImageView
+
+            <com.master.glideimageview.GlideImageView
                 android:layout_width="300dp"
                 android:layout_height="300dp"
-                android:id="@+id/image"
-                android:src="@drawable/superfly" />
+                android:id="@+id/image"/>
 
             <TextView
                 android:id="@+id/songName"
@@ -36,7 +36,7 @@
                 tools:text="Superfly"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
-        </FrameLayout>
+        </LinearLayout>
 
         <View
             android:id="@+id/item_swipe_left_indicator"
@@ -57,4 +57,4 @@
     </android.support.v7.widget.CardView>
 
 
-</LinearLayout>
+</RelativeLayout>

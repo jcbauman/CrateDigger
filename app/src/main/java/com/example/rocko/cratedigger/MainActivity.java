@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 import com.spotify.android.appremote.api.ConnectionParams;
 import com.spotify.android.appremote.api.Connector;
@@ -17,23 +18,33 @@ import com.spotify.protocol.types.Track;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import kaaes.spotify.webapi.android.SpotifyApi;
 import kaaes.spotify.webapi.android.SpotifyService;
 import retrofit.Callback;
+import retrofit.RetrofitError;
 import retrofit.client.Response;
 
 
 public class MainActivity extends AppCompatActivity {
 
 
+    private Card cards_data[];
     private ArrayList<String> al;
-    private ArrayAdapter<String> arrayAdapter;
+    private ArrayList<String> audioSample;
+    private ArrayList<String> artwork;
+
+    private CardArrayAdapter arrayAdapter;
+
     private int i;
     private static final String CLIENT_ID = "b25d7e2520a046158aaaa51094859686";
     private static final String REDIRECT_URI = "https://jcbauman.portfoliobox.net/";
     private SpotifyAppRemote mSpotifyAppRemote;
 
+
+    ListView listview;
+    List<Card> rowItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,17 +54,19 @@ public class MainActivity extends AppCompatActivity {
         SpotifyApi api = new SpotifyApi();
         api.setAccessToken("BQDKZmqNvqvHzuXbTK8nS2MVlWOEpsWm-HtFhl7ZJh7B8jpDCl0oIHkvq1qSh-ZQJ70WCCgyCRAfxJ8rpaChdMjrxdB1sUAc2CbFmpJlgEC506m528Az4x38i0WBYjZuiGdkuJzEdgCFFhcY");
         SpotifyService spotify = api.getService();
-        spotify.getAlbum("2dIGnmEIy1WZIcZCFSj6i8", new Callback<Album>() {
-            @Override
-            public void success(Album album, Response response) {
-                Log.d("Album success", album.name);
-            }
+//        spotify.getAlbum("2dIGnmEIy1WZIcZCFSj6i8", new Callback<Album>() {
+//
+//            @Override
+//            public void success(Album album, Response response) {
+//                Log.d("Album success", album.name);
+//            }
+//
+//            @Override
+//            public void failure(RetrofitError error) {
+//                Log.d("Album failure", error.toString());
+//            }
+//        });
 
-            @Override
-            public void failure(RetrofitError error) {
-                Log.d("Album failure", error.toString());
-            }
-        });
 
         al = new ArrayList<>();
         al.add("Superfly");
@@ -65,8 +78,23 @@ public class MainActivity extends AppCompatActivity {
         al.add("Too Late");
         al.add("Move On Up");
 
-        arrayAdapter = new ArrayAdapter<>(this, R.layout.item, R.id.songName, al );
 
+
+        rowItems = new ArrayList<Card>();
+
+        //add new Card item
+        Card item;
+        item = new Card("Curtis Mayfield", "Superfly", "https://i.scdn.co/image/755a2683937d13f338c1aa09284db25ff50e9b70", "https://p.scdn.co/mp3-preview/4ab4720efd311ee87a1fafe4ed7f65605addd8cc?cid=774b29d4f13844c495f206cafdad9c86");
+        rowItems.add(item);
+        item = new Card("UMO", "Can't Keep Checking My Phone", "https://i.scdn.co/image/879df86e1d1c7652be108979817c5ec60025cf07", "https://p.scdn.co/mp3-preview/9e9c97ac933fe93e2ebb145167944c9223872c71?cid=774b29d4f13844c495f206cafdad9c86");
+        rowItems.add(item);
+        item = new Card("Selda Bagcan", "Ince Ince", "https://i.scdn.co/image/c06b3625deb852d3ef626c8675374c15d60b446e", "https://p.scdn.co/mp3-preview/5d4526279529c64246cf8f76810e3602fb07ee61?cid=774b29d4f13844c495f206cafdad9c86");
+        rowItems.add(item);
+        item = new Card("Eminem", "Without Me","https://i.scdn.co/image/d6aebc8455b303340e188c20fd4f562a2ab980e0", "https://p.scdn.co/mp3-preview/c2b67567f040b2c924aed143ba21748b7ce092f6?cid=774b29d4f13844c495f206cafdad9c86");
+        rowItems.add(item);
+
+        arrayAdapter = new CardArrayAdapter(this, R.layout.item, rowItems);
+        //CardArrayAdapter.notifyDataSetChanged();
         SwipeFlingAdapterView flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
 
 
@@ -76,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
             public void removeFirstObjectInAdapter() {
                 // this is the simplest way to delete an object from the Adapter (/AdapterView)
                 Log.d("LIST", "removed object!");
-                al.remove(0);
+                rowItems.remove(0);
                 arrayAdapter.notifyDataSetChanged();
             }
 
@@ -85,18 +113,18 @@ public class MainActivity extends AppCompatActivity {
                 //Do something on the left!
                 //You also have access to the original object.
                 //If you want to use it just cast it (String) dataObject
-                Toast.makeText(MainActivity.this, "left", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Dislike", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onRightCardExit(Object dataObject) {
-                Toast.makeText(MainActivity.this, "right", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Like", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onAdapterAboutToEmpty(int itemsInAdapter) {
                 // Ask for more data here
-                al.add("XML ".concat(String.valueOf(i)));
+                al.add("Next Song".concat(String.valueOf(i)));
                 arrayAdapter.notifyDataSetChanged();
                 Log.d("LIST", "notified");
                 i++;

@@ -34,6 +34,8 @@ dependencies {
     implementation 'com.android.support:cardview-v7:28.0.0'
     implementation project(':spotify-app-remote')
     implementation "com.google.code.gson:gson:2.6.1"
+    implementation 'com.squareup.retrofit:retrofit:1.9.0'
+    implementation 'com.master.android:glideimageview:1.0'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
