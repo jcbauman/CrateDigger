@@ -1,6 +1,7 @@
 package com.example.rocko.cratedigger;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,7 +31,6 @@ import retrofit.client.Response;
 
 
 public class MainActivity extends AppCompatActivity {
-
 
     //UI
     ImageButton dislikeBtn;
@@ -155,6 +155,9 @@ public class MainActivity extends AppCompatActivity {
                 flingContainer.getTopCardListener().selectRight();
             }
         });
+
+        //audio production
+        startService(new Intent(this, AudioService.class));
     }
 
     @Override
@@ -210,23 +213,10 @@ public class MainActivity extends AppCompatActivity {
                     public void onEvent(PlayerState playerState) {
                         final Track track = playerState.track;
                         if (track != null) {
-                            Log.d("MainActivity", track.name + " by " + track.artist.name);
+                            Log.d("MainActivity is playing", track.name + " by " + track.artist.name);
                         }
                     }
                 });
     }
 
-
-//    @OnClick(R.id.right)
-//    public void right() {
-//        /**
-//         * Trigger the right event manually.
-//         */
-//        flingContainer.getTopCardListener().selectRight();
-//    }
-//
-//    @OnClick(R.id.left)
-//    public void left() {
-//        flingContainer.getTopCardListener().selectLeft();
-//    }
 }

@@ -1,6 +1,8 @@
 package com.example.rocko.cratedigger;
 
 import android.content.Context;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.master.glideimageview.GlideImageView;
 
+import java.io.IOException;
 import java.util.List;
 
 public class CardArrayAdapter extends ArrayAdapter<Card> {
