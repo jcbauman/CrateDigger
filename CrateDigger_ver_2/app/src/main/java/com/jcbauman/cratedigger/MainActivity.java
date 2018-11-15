@@ -32,6 +32,10 @@ public class MainActivity extends AppCompatActivity {
     // MediaPlayer
     MediaPlayer mediaPlayer;
     String songPreviewURL;
+
+    // SQLiteHelper
+    SQLiteDBHelper dbHelper = null;
+
     // TEST CODE END 2
 
     @Override
@@ -40,6 +44,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // TEST CODE STARTS 3
+
+        dbHelper = new SQLiteDBHelper(MainActivity.this);
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
         final HardcodedSongs hardcodedSongs = new HardcodedSongs();
 
@@ -86,16 +99,23 @@ public class MainActivity extends AppCompatActivity {
 
                 // TEST CODE START 5
                 hardcodedSongs.dislikedSong();
-                Toast.makeText(MainActivity.this, "Dislike", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Disliked", Toast.LENGTH_SHORT).show();
                 // TEST CODE END 5
             }
 
             @Override
             public void onRightCardExit(Object dataObject) {
                 // TEST CODE START 6
+                dbHelper.addSong((SongObject) dataObject);
+                List<SongObject> songObjects = dbHelper.getAllSongs();
+                for(int i = 0; i < songObjects.size(); i++)
+                {
+                    System.out.println("LOOK OVER HERE!!!!!!!!!!!!!! " + songObjects.get(i).getSongName());
+                }
+
                 hardcodedSongs.likedSong();
                 // TEST CODE END 6
-                Toast.makeText(MainActivity.this, "Like", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Liked", Toast.LENGTH_SHORT).show();
             }
 
             @Override
