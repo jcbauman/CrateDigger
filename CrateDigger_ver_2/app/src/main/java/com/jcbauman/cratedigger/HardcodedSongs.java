@@ -21,10 +21,10 @@ public class HardcodedSongs extends  DisplaySong
         this.addSongObject(songObject);
 
         songObject = new SongObject();
-        songObject.setSongArtist("Steve Watson");
-        songObject.setSongName("Born to Boogie");
-        songObject.setSongImageURL("https://i.scdn.co/image/a501f65666e035306dcbb1411ae855270f1acbd7");
-        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/4819fcee8a3258b7a47d9d8d9eb328ddb7e89971?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongArtist("Selda Bagcan");
+        songObject.setSongName("Ince Ince");
+        songObject.setSongImageURL("https://i.scdn.co/image/c06b3625deb852d3ef626c8675374c15d60b446e");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/5d4526279529c64246cf8f76810e3602fb07ee61?cid=774b29d4f13844c495f206cafdad9c86");
         this.addSongObject(songObject);
 
         songObject = new SongObject();
@@ -35,10 +35,10 @@ public class HardcodedSongs extends  DisplaySong
         this.addSongObject(songObject);
 
         songObject = new SongObject();
-        songObject.setSongArtist("Kero Kero Bonito");
-        songObject.setSongName("Flamingo");
-        songObject.setSongImageURL("https://i.scdn.co/image/e585e5392654dbaf62816ee27967fe79806a90f0");
-        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/78756214124181a08331355bf6bb7741901efbcf?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongArtist("Steve Watson");
+        songObject.setSongName("Born to Boogie");
+        songObject.setSongImageURL("https://i.scdn.co/image/a501f65666e035306dcbb1411ae855270f1acbd7");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/4819fcee8a3258b7a47d9d8d9eb328ddb7e89971?cid=774b29d4f13844c495f206cafdad9c86");
         this.addSongObject(songObject);
 
         songObject = new SongObject();
@@ -84,10 +84,10 @@ public class HardcodedSongs extends  DisplaySong
         this.addSongObject(songObject);
 
         songObject = new SongObject();
-        songObject.setSongArtist("Oh No");
-        songObject.setSongName("Heavy");
-        songObject.setSongImageURL("https://i.scdn.co/image/7f2a22fe03a21508a8344e99389e496e7dd8bd0c");
-        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/3d38a1923e0276b486bd9a0dc203603947286214?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongArtist("Oh Wonder");
+        songObject.setSongName("Lose It");
+        songObject.setSongImageURL("https://i.scdn.co/image/2284d431246c4a5a1cab89721d4f3ce7a3bfae74");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/fa0fbf874240b9a08eff084ff4ed8542b79764cf?cid=774b29d4f13844c495f206cafdad9c86");
         this.addSongObject(songObject);
 
         songObject = new SongObject();
@@ -102,6 +102,13 @@ public class HardcodedSongs extends  DisplaySong
         songObject.setSongName("Moving On");
         songObject.setSongImageURL("https://i.scdn.co/image/d6903dd1212f6e10dd9e086a65695df2239c2cb2");
         songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/6753c3f099f3ec08bdcac335dc39a43d28777f0c?cid=774b29d4f13844c495f206cafdad9c86");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Kero Kero Bonito");
+        songObject.setSongName("Flamingo");
+        songObject.setSongImageURL("https://i.scdn.co/image/e585e5392654dbaf62816ee27967fe79806a90f0");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/78756214124181a08331355bf6bb7741901efbcf?cid=774b29d4f13844c495f206cafdad9c86");
         this.addSongObject(songObject);
 
         songObject = new SongObject();

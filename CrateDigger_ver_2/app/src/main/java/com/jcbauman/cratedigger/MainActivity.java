@@ -5,10 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 
 // TEST CODE START 1
 
-import android.content.Context;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import android.media.AudioManager;
@@ -34,10 +32,6 @@ public class MainActivity extends AppCompatActivity {
     // MediaPlayer
     MediaPlayer mediaPlayer;
     String songPreviewURL;
-
-    // SQLiteHelper
-    SQLiteDBHelper dbHelper = null;
-
     // TEST CODE END 2
 
     @Override
@@ -47,24 +41,6 @@ public class MainActivity extends AppCompatActivity {
 
         // TEST CODE STARTS 3
 
-        dbHelper = new SQLiteDBHelper(MainActivity.this);
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
-<<<<<<< HEAD
-=======
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-
-        // TEST CODE STARTS 3
-
->>>>>>> ed3642ff5d5c63a0e98ac2aee2eb07a350c6ff5d
         final HardcodedSongs hardcodedSongs = new HardcodedSongs();
 
         // Start playing music for first card
@@ -110,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // TEST CODE START 5
                 hardcodedSongs.dislikedSong();
-                Toast.makeText(MainActivity.this, "Disliked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Dislike", Toast.LENGTH_SHORT).show();
                 // TEST CODE END 5
             }
 
@@ -118,14 +94,8 @@ public class MainActivity extends AppCompatActivity {
             public void onRightCardExit(Object dataObject) {
                 // TEST CODE START 6
                 hardcodedSongs.likedSong();
-                dbHelper.addSong((SongObject) dataObject);
-                List<SongObject> songObjects = dbHelper.getAllSongs();
-                for(int i = 0; i < songObjects.size(); i++)
-                {
-                    System.out.println("LOOK OVER HERE " + songObjects.get(i).getSongName());
-                }
                 // TEST CODE END 6
-                Toast.makeText(MainActivity.this, "Liked!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Like", Toast.LENGTH_SHORT).show();
             }
 
             @Override

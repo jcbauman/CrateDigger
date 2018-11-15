@@ -30,11 +30,7 @@ public class DisplaySong
     public void likedSong()
     {
         // Add SongObject to database
-<<<<<<< HEAD
-//        System.out.println("LOOK OVER HERE!!!!! " + this.songObjectsList.get(0).getSongName());
-=======
-       // dbHelper.addSong(this.songObjectsList.get(0));
->>>>>>> ed3642ff5d5c63a0e98ac2aee2eb07a350c6ff5d
+//        dbHelper.addSong(this.songObjectsList.get(0));
     }
 
     public void dislikedSong()
