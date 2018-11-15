@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import android.media.AudioManager;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         // TEST CODE STARTS 3
 
@@ -93,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // TEST CODE START 5
                 hardcodedSongs.dislikedSong();
-                Toast.makeText(MainActivity.this, "Dislike", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Disliked", Toast.LENGTH_SHORT).show();
                 // TEST CODE END 5
             }
 
@@ -102,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 // TEST CODE START 6
                 hardcodedSongs.likedSong();
                 // TEST CODE END 6
-                Toast.makeText(MainActivity.this, "Like", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Liked!", Toast.LENGTH_SHORT).show();
             }
 
             @Override
