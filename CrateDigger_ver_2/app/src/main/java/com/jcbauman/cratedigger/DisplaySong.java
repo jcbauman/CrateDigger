@@ -30,7 +30,7 @@ public class DisplaySong
     public void likedSong()
     {
         // Add SongObject to database
-//        dbHelper.addSong(this.songObjectsList.get(0));
+        dbHelper.addSong(this.songObjectsList.get(0));
     }
 
     public void dislikedSong()
