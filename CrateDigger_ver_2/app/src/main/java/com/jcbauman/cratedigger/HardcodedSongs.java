@@ -21,13 +21,6 @@ public class HardcodedSongs extends  DisplaySong
         this.addSongObject(songObject);
 
         songObject = new SongObject();
-        songObject.setSongArtist("Selda Bagcan");
-        songObject.setSongName("Ince Ince");
-        songObject.setSongImageURL("https://i.scdn.co/image/c06b3625deb852d3ef626c8675374c15d60b446e");
-        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/5d4526279529c64246cf8f76810e3602fb07ee61?cid=774b29d4f13844c495f206cafdad9c86");
-        this.addSongObject(songObject);
-
-        songObject = new SongObject();
         songObject.setSongArtist("Eminem");
         songObject.setSongName("Without Me");
         songObject.setSongImageURL("https://i.scdn.co/image/d6aebc8455b303340e188c20fd4f562a2ab980e0");
@@ -46,6 +39,13 @@ public class HardcodedSongs extends  DisplaySong
         songObject.setSongName("Hotel California - Remastered");
         songObject.setSongImageURL("https://i.scdn.co/image/a5d370a3ea82efa63784521a1d7352db0a7a4d3a");
         songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/50e82c99c20ffa4223e82250605bbd8500cb3928?cid=774b29d4f13844c495f206cafdad9c86");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Kero Kero Bonito");
+        songObject.setSongName("Flamingo");
+        songObject.setSongImageURL("https://i.scdn.co/image/e585e5392654dbaf62816ee27967fe79806a90f0");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/78756214124181a08331355bf6bb7741901efbcf?cid=774b29d4f13844c495f206cafdad9c86");
         this.addSongObject(songObject);
 
         songObject = new SongObject();
@@ -84,13 +84,6 @@ public class HardcodedSongs extends  DisplaySong
         this.addSongObject(songObject);
 
         songObject = new SongObject();
-        songObject.setSongArtist("Oh Wonder");
-        songObject.setSongName("Lose It");
-        songObject.setSongImageURL("https://i.scdn.co/image/2284d431246c4a5a1cab89721d4f3ce7a3bfae74");
-        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/fa0fbf874240b9a08eff084ff4ed8542b79764cf?cid=774b29d4f13844c495f206cafdad9c86");
-        this.addSongObject(songObject);
-
-        songObject = new SongObject();
         songObject.setSongArtist("Distrion, Electro-Light");
         songObject.setSongName("Rubik");
         songObject.setSongImageURL("https://i.scdn.co/image/ae90b4fac612e1719d186478ed264fc46ea44a87");
@@ -104,12 +97,6 @@ public class HardcodedSongs extends  DisplaySong
         songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/6753c3f099f3ec08bdcac335dc39a43d28777f0c?cid=774b29d4f13844c495f206cafdad9c86");
         this.addSongObject(songObject);
 
-        songObject = new SongObject();
-        songObject.setSongArtist("Kero Kero Bonito");
-        songObject.setSongName("Flamingo");
-        songObject.setSongImageURL("https://i.scdn.co/image/e585e5392654dbaf62816ee27967fe79806a90f0");
-        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/78756214124181a08331355bf6bb7741901efbcf?cid=774b29d4f13844c495f206cafdad9c86");
-        this.addSongObject(songObject);
 
         songObject = new SongObject();
         songObject.setSongArtist("Los Tigres Del Norte");

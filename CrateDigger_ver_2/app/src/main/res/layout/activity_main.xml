@@ -24,7 +24,7 @@
         android:layout_height="75dp"
         android:layout_marginStart="64dp"
         android:layout_marginLeft="64dp"
-        android:layout_marginBottom="43dp"
+        android:layout_marginBottom="32dp"
         android:background="@null"
         android:scaleType="fitCenter"
         android:src="@drawable/dislike"
@@ -37,12 +37,11 @@
         android:layout_height="75dp"
         android:layout_marginEnd="64dp"
         android:layout_marginRight="64dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="32dp"
         android:background="@null"
         android:scaleType="fitCenter"
         android:src="@drawable/like"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
