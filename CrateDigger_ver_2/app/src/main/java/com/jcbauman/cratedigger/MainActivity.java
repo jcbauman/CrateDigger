@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 // TEST CODE START 1
 
+import android.content.Context;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -32,21 +33,27 @@ public class MainActivity extends AppCompatActivity {
     // MediaPlayer
     MediaPlayer mediaPlayer;
     String songPreviewURL;
+
+    // SQLiteHelper
+    SQLiteDBHelper dbHelper = null;
+
     // TEST CODE END 2
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // TEST CODE STARTS 3
+
+        dbHelper = new SQLiteDBHelper(MainActivity.this);
+
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        // TEST CODE STARTS 3
 
         final HardcodedSongs hardcodedSongs = new HardcodedSongs();
 
@@ -101,6 +108,12 @@ public class MainActivity extends AppCompatActivity {
             public void onRightCardExit(Object dataObject) {
                 // TEST CODE START 6
                 hardcodedSongs.likedSong();
+                dbHelper.addSong((SongObject) dataObject);
+                List<SongObject> songObjects = dbHelper.getAllSongs();
+                for(int i = 0; i < songObjects.size(); i++)
+                {
+                    System.out.println("LOOK OVER HERE " + songObjects.get(i).getSongName());
+                }
                 // TEST CODE END 6
                 Toast.makeText(MainActivity.this, "Like", Toast.LENGTH_SHORT).show();
             }
