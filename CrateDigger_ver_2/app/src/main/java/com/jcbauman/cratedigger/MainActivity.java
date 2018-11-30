@@ -15,6 +15,15 @@ import java.io.IOException;
 import java.util.List;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
+import kaaes.spotify.webapi.android.SpotifyApi;
+import kaaes.spotify.webapi.android.SpotifyService;
+import kaaes.spotify.webapi.android.models.Album;
+import kaaes.spotify.webapi.android.models.Artists;
+import kaaes.spotify.webapi.android.models.Track;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
+
 // TEST CODE END 1
 
 

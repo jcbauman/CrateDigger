@@ -6,6 +6,8 @@ public class HardcodedSongs extends  DisplaySong
 {
     public HardcodedSongs()
     {
+        SpotifyAPIHelper spotifyAPIHelper = new SpotifyAPIHelper();
+
         SongObject songObject = new SongObject();
         songObject.setSongArtist("Curtis Mayfield");
         songObject.setSongName("Superfly");
@@ -19,6 +21,12 @@ public class HardcodedSongs extends  DisplaySong
         songObject.setSongImageURL("https://i.scdn.co/image/879df86e1d1c7652be108979817c5ec60025cf07");
         songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/9e9c97ac933fe93e2ebb145167944c9223872c71?cid=774b29d4f13844c495f206cafdad9c86");
         this.addSongObject(songObject);
+
+        //spotify TEST
+
+        //spotifyAPIHelper.getATrack("4XsH9zBWPOCdXoH9ZDdS8r");
+
+        //concludes spotify TEST
 
         songObject = new SongObject();
         songObject.setSongArtist("Eminem");

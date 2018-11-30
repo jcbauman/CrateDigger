@@ -10,6 +10,22 @@ public class SongObject
     private String songPreviewURL;
     private String songSpotifyLink;
 
+    //Constructors
+
+    public SongObject(){
+
+    }
+
+    public SongObject(int songId, String songURI, String songName, String songArtist, String songImageURL, String songPreviewURL, String songSpotifyLink){
+        this.songId = songId;
+        this.songURI = songURI;
+        this.songName = songName;
+        this.songArtist = songArtist;
+        this.songImageURL = songImageURL;
+        this.songPreviewURL = songPreviewURL;
+        this.songSpotifyLink = songSpotifyLink;
+    }
+
     public int getSongId() {
         return songId;
     }

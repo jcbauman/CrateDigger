@@ -5,9 +5,12 @@ buildscript {
     repositories {
         google()
         jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath 'com.github.kaaes:spotify-web-api-android:0.4.1'
         
 
         // NOTE: Do not place your application dependencies here; they belong
