@@ -1,5 +1,6 @@
 package com.jcbauman.cratedigger;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 import android.media.AudioManager;
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     // User Interface
     ImageButton dislikeBtn;
     ImageButton likeBtn;
+    Button likedSongBtn;
     SwipeFlingAdapterView flingContainer;
 
     // Variables
@@ -149,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
 
         dislikeBtn = (ImageButton) findViewById(R.id.left);
         likeBtn = (ImageButton) findViewById(R.id.right);
+        likedSongBtn = (Button) findViewById(R.id.likedSongBtn);
 
         dislikeBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -160,8 +164,16 @@ public class MainActivity extends AppCompatActivity {
                 flingContainer.getTopCardListener().selectRight();
             }
         });
-
+        likedSongBtn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                goToLikedSongsActivity(v);
+            }
+        });
 
         // TEST CODE ENDS 3
+    }
+    public void goToLikedSongsActivity(View view){
+        Intent intent = new Intent (this, LikedSongActivity.class);
+        startActivity(intent);
     }
 }
