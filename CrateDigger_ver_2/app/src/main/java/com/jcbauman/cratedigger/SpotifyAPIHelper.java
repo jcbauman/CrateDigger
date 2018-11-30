@@ -7,6 +7,7 @@ import android.util.Log;
 import kaaes.spotify.webapi.android.SpotifyApi;
 import kaaes.spotify.webapi.android.SpotifyService;
 import kaaes.spotify.webapi.android.models.Album;
+import kaaes.spotify.webapi.android.models.Artist;
 import kaaes.spotify.webapi.android.models.Artists;
 import kaaes.spotify.webapi.android.models.Track;
 import retrofit.Callback;
@@ -17,6 +18,10 @@ public class SpotifyAPIHelper extends DisplaySong{
 
     SpotifyApi api = new SpotifyApi();
     SpotifyService spotify;
+
+    Track track;
+    Album album;
+    Artist artist;
 
     public SpotifyAPIHelper() {
         //SPOTIFY ROCKO TEST CODE BEGINS
@@ -44,7 +49,7 @@ public class SpotifyAPIHelper extends DisplaySong{
                 Log.d("Song failure", error.toString());
             }
         });
-        //song = new SongObject(0,songURI,track.name,track.artists.toString(), "https://i.scdn.co/image/755a2683937d13f338c1aa09284db25ff50e9b70",track.preview_url,track.external_urls.get(0));
+        song = new SongObject(0,songURI,track.name,track.artists.toString(), "https://i.scdn.co/image/755a2683937d13f338c1aa09284db25ff50e9b70",track.preview_url,track.external_urls.get(0));
         this.addSongObject(song);
     }
 
