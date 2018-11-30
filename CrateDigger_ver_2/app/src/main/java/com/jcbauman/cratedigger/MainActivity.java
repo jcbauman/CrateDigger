@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton dislikeBtn;
     ImageButton likeBtn;
     Button likedSongBtn;
+    Button statsBtn;
     SwipeFlingAdapterView flingContainer;
 
     // Variables
@@ -153,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
         dislikeBtn = (ImageButton) findViewById(R.id.left);
         likeBtn = (ImageButton) findViewById(R.id.right);
         likedSongBtn = (Button) findViewById(R.id.likedSongBtn);
+        statsBtn = (Button) findViewById(R.id.statsBtn);
 
         dislikeBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
@@ -169,11 +171,21 @@ public class MainActivity extends AppCompatActivity {
                 goToLikedSongsActivity(v);
             }
         });
+        statsBtn.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                goToStatsActivity(v);
+            }
+        });
 
         // TEST CODE ENDS 3
     }
     public void goToLikedSongsActivity(View view){
         Intent intent = new Intent (this, LikedSongActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToStatsActivity(View view){
+        Intent intent = new Intent (this, StatsActivity.class);
         startActivity(intent);
     }
 }
