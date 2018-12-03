@@ -60,6 +60,16 @@ public class SongObject
         this.songArtist = songArtist;
     }
 
+    public String getSongGenre()
+    {
+        return this.songGenre;
+    }
+
+    public void setSongGenre(String genre)
+    {
+        this.songGenre = genre;
+    }
+
     public String getSongImageURL() {
         return songImageURL;
     }
@@ -83,8 +93,4 @@ public class SongObject
     public void setSongSpotifyLink(String songSpotifyLink) {
         this.songSpotifyLink = songSpotifyLink;
     }
-
-    public void setSongGenre(String genre) {this.songGenre = genre;}
-
-    public String getSongGenre(){ return this.songGenre;}
 }

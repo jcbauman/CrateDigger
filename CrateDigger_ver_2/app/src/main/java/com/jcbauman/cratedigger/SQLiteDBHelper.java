@@ -19,6 +19,7 @@ public class SQLiteDBHelper extends SQLiteOpenHelper
     public static final String KEY_SONG_URI = "song_uri";
     public static final String KEY_SONG_NAME = "song_name";
     public static final String KEY_SONG_ARTIST = "song_artist";
+    public static final String KEY_SONG_GENRE = "song_genre";
     public static final String KEY_SONG_IMAGE_URL = "song_image_url";
     public static final String KEY_SONG_PREVIEW_URL = "song_preview_url";
     public static final String KEY_SONG_SPOTIFY_LINK = "song_spotify_link";
@@ -27,6 +28,7 @@ public class SQLiteDBHelper extends SQLiteOpenHelper
     private static final String SQL_CREATE_SONGS =
             "CREATE TABLE songs (" + KEY_SONG_ID + " INTEGER PRIMARY KEY, "
             + KEY_SONG_URI + " TEXT, " + KEY_SONG_NAME + " TEXT, " + KEY_SONG_ARTIST + " TEXT, "
+            + KEY_SONG_GENRE + " TEXT, "
             + KEY_SONG_IMAGE_URL + " TEXT, " + KEY_SONG_PREVIEW_URL + " TEXT, "
             + KEY_SONG_SPOTIFY_LINK + " TEXT );";
 
@@ -65,6 +67,7 @@ public class SQLiteDBHelper extends SQLiteOpenHelper
         song_objects.put(KEY_SONG_URI, song.getSongURI());
         song_objects.put(KEY_SONG_NAME, song.getSongName());
         song_objects.put(KEY_SONG_ARTIST, song.getSongArtist());
+        song_objects.put(KEY_SONG_GENRE, song.getSongGenre());
         song_objects.put(KEY_SONG_IMAGE_URL, song.getSongImageURL());
         song_objects.put(KEY_SONG_PREVIEW_URL, song.getSongPreviewURL());
         song_objects.put(KEY_SONG_SPOTIFY_LINK, song.getSongSpotifyLink());
@@ -93,9 +96,10 @@ public class SQLiteDBHelper extends SQLiteOpenHelper
                     songObject.setSongURI(cursor.getString(1));
                     songObject.setSongName(cursor.getString(2));
                     songObject.setSongArtist(cursor.getString(3));
-                    songObject.setSongImageURL(cursor.getString(4));
-                    songObject.setSongPreviewURL(cursor.getString(5));
-                    songObject.setSongSpotifyLink(cursor.getString(6));
+                    songObject.setSongGenre(cursor.getString(4));
+                    songObject.setSongImageURL(cursor.getString(5));
+                    songObject.setSongPreviewURL(cursor.getString(6));
+                    songObject.setSongSpotifyLink(cursor.getString(7));
 
                     // Add song object to list
                     songObjectsList.add(songObject);
