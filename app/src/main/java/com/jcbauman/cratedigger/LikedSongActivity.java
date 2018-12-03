@@ -29,6 +29,7 @@ public class LikedSongActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liked_song);
+        getSupportActionBar().setTitle("Your Music");
 
 
         gridView = (GridView) findViewById(R.id.LikedSongList);

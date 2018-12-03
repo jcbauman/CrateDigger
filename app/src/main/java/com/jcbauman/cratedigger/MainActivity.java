@@ -67,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        getSupportActionBar().setTitle("Crate Digger");
+
         final HardcodedSongs hardcodedSongs = new HardcodedSongs();
 
         // Start playing music for first card

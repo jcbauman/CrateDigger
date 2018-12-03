@@ -19,10 +19,12 @@ public class StatsActivity extends AppCompatActivity {
     PieChart pieChart;
     SQLiteDBHelper dbHelper;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats);
+        getSupportActionBar().setTitle("Your Genre Stats");
 
         pieChart = (PieChart) findViewById(R.id.piechart);
         pieChart.setUsePercentValues(true);

@@ -62,7 +62,7 @@ public class LikedSongListAdapter extends BaseAdapter {
             holder = (ViewHolder) row.getTag();
         }
         SongObject songo = songList.get(position);
-        holder.songText.setText(songo.getSongName() + " by " + songo.getSongArtist());
+        holder.songText.setText("'" + songo.getSongName() + "' by " + songo.getSongArtist());
 
         holder.albumArt.loadImageUrl(songo.getSongImageURL());
         return row;
