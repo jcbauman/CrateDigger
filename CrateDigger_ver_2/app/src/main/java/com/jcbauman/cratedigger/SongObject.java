@@ -9,6 +9,7 @@ public class SongObject
     private String songImageURL;
     private String songPreviewURL;
     private String songSpotifyLink;
+    private String songGenre;
 
     //Constructors
 
@@ -16,7 +17,7 @@ public class SongObject
 
     }
 
-    public SongObject(int songId, String songURI, String songName, String songArtist, String songImageURL, String songPreviewURL, String songSpotifyLink){
+    public SongObject(int songId, String songURI, String songName, String songArtist, String songImageURL, String songPreviewURL, String songSpotifyLink, String songGenre){
         this.songId = songId;
         this.songURI = songURI;
         this.songName = songName;
@@ -24,6 +25,7 @@ public class SongObject
         this.songImageURL = songImageURL;
         this.songPreviewURL = songPreviewURL;
         this.songSpotifyLink = songSpotifyLink;
+        this.songGenre = songGenre;
     }
 
     public int getSongId() {
@@ -81,4 +83,8 @@ public class SongObject
     public void setSongSpotifyLink(String songSpotifyLink) {
         this.songSpotifyLink = songSpotifyLink;
     }
+
+    public void setSongGenre(String genre) {this.songGenre = genre;}
+
+    public String getSongGenre(){ return this.songGenre;}
 }
