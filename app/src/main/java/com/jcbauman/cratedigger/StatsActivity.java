@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class StatsActivity extends AppCompatActivity {
 
     PieChart pieChart;
+    SQLiteDBHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +34,69 @@ public class StatsActivity extends AppCompatActivity {
         pieChart.setHoleColor(Color.BLACK);
         pieChart.setTransparentCircleRadius(61f);
 
+        //initialize genre counts
+        int rock = 0;
+        int soul = 0;
+        int hip = 0;
+        int alt = 0;
+        int electro = 0;
+        int world = 0;
+        int other = 0;
+
+        //accessing song data
+        dbHelper = new SQLiteDBHelper(StatsActivity.this);
+        dbHelper.getWritableDatabase();
+        ArrayList<SongObject> list = dbHelper.getAllSongs();
         ArrayList<PieEntry> yValues = new ArrayList<>();
-        yValues.add(new PieEntry(34f,"ROCK"));
-        yValues.add(new PieEntry(15f,"SOUL/FUNK"));
-        yValues.add(new PieEntry(34f,"RAP/HIP HOP/R&B"));
-        yValues.add(new PieEntry(34f,"CLASSICAL"));
-        yValues.add(new PieEntry(66f,"ELECTRONIC"));
-        yValues.add(new PieEntry(34f,"WORLD"));
-        yValues.add(new PieEntry(34f,"JAZZ"));
+        if(list.size() > 0) {
+            for(SongObject songo: list){
+                String genre = songo.getSongGenre();
+                if(genre.equals("Rock")){
+                    rock++;
+                }
+                if(genre.equals("Soul/Funk/R&B")){
+                    soul++;
+                }
+                if(genre.equals("Hip-Hop/Rap")){
+                    hip++;
+                }
+                if(genre.equals("Alternative/Indie")){
+                    alt++;
+                }
+                if(genre.equals("Dance/Electronic")){
+                    electro++;
+                }
+                if(genre.equals("World")){
+                    world++;
+                }
+                if(genre.equals("Other")){
+                    other++;
+                }
+            }
+            if(rock>0){
+                yValues.add(new PieEntry(rock,"Rock"));
+            }
+            if(soul>0){
+                yValues.add(new PieEntry(soul,"Soul/Funk/R&B"));
+            }
+            if(hip>0){
+                yValues.add(new PieEntry(hip,"Hip-Hop/Rap"));
+            }
+            if(alt>0){
+                yValues.add(new PieEntry(alt,"Alternative/Indie"));
+            }
+            if(electro>0){
+                yValues.add(new PieEntry(electro,"Dance/Electronic"));
+            }
+            if(world>0){
+                yValues.add(new PieEntry(world,"World"));
+            }
+            if(other>0){
+                yValues.add(new PieEntry(other,"Other"));
+            }
+        } else{
+            yValues.add(new PieEntry(34f,"No songs liked yet"));
+        }
 
         pieChart.animateY(1000, Easing.EasingOption.EaseInOutCirc);
 
@@ -56,7 +112,7 @@ public class StatsActivity extends AppCompatActivity {
         dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
 
         PieData data = new PieData(dataSet);
-        data.setValueTextSize(10f);
+        data.setValueTextSize(0);
         data.setValueTextColor(Color.BLACK);
 
         pieChart.setData(data);

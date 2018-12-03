@@ -73,7 +73,7 @@ public class HardcodedSongs extends  DisplaySong
         songObject.setSongName("Flamingo");
         songObject.setSongImageURL("https://i.scdn.co/image/e585e5392654dbaf62816ee27967fe79806a90f0");
         songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/78756214124181a08331355bf6bb7741901efbcf?cid=774b29d4f13844c495f206cafdad9c86");
-        songObject.setSongGenre("Electronic");
+        songObject.setSongGenre("Dance/Electronic");
         songObject.setSongSpotifyLink("https://open.spotify.com/track/3AaiEsiqHO2ylnnOdWninE?si=xC7vfKNBRNmpuyvWfxTYcg");
         this.addSongObject(songObject);
 
@@ -100,7 +100,7 @@ public class HardcodedSongs extends  DisplaySong
         songObject.setSongName("Sleepyhead");
         songObject.setSongImageURL("https://i.scdn.co/image/9f5bb223ebb80874e19048232d8c73a037913236");
         songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/de7153eb71eb8a582ff05bd54e31e841be591961?cid=774b29d4f13844c495f206cafdad9c86");
-        songObject.setSongGenre("Electronic");
+        songObject.setSongGenre("Dance/Electronic");
         songObject.setSongSpotifyLink("https://open.spotify.com/track/4prEPl61C8qZpeo3IkYSMl?si=oVl-QrMLTuya7h1KYrTm7A");
         this.addSongObject(songObject);
 
