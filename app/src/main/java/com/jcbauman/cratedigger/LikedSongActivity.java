@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -24,17 +25,19 @@ public class LikedSongActivity extends AppCompatActivity {
     GridView gridView;
     ArrayList<SongObject> list;
     LikedSongListAdapter adapter = null;
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liked_song);
-        getSupportActionBar().setTitle("Your Music");
 
-
+        //UI
         gridView = (GridView) findViewById(R.id.LikedSongList);
         list = new ArrayList<>();
-    //moved from here
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Your Music");
 
         //list.clear();
         dbHelper = new SQLiteDBHelper(LikedSongActivity.this);
@@ -54,7 +57,6 @@ public class LikedSongActivity extends AppCompatActivity {
                 Uri uri = Uri.parse(oo.getSongSpotifyLink());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
-
             }
         });
     }

@@ -24,7 +24,7 @@ public class StatsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats);
-        getSupportActionBar().setTitle("Your Genre Stats");
+        //getSupportActionBar().setTitle("Your Genre Stats");
 
         pieChart = (PieChart) findViewById(R.id.piechart);
         pieChart.setUsePercentValues(true);

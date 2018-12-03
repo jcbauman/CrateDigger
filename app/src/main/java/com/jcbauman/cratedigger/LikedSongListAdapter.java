@@ -63,6 +63,7 @@ public class LikedSongListAdapter extends BaseAdapter {
         }
         SongObject songo = songList.get(position);
         holder.songText.setText("'" + songo.getSongName() + "' by " + songo.getSongArtist());
+        System.out.println("Spotify print: " + songo.getSongName());
 
         holder.albumArt.loadImageUrl(songo.getSongImageURL());
         return row;

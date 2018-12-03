@@ -6,7 +6,10 @@ import android.support.v7.app.AppCompatActivity;
 
 // TEST CODE START 1
 
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -35,9 +38,8 @@ public class MainActivity extends AppCompatActivity {
     // User Interface
     ImageButton dislikeBtn;
     ImageButton likeBtn;
-    Button likedSongBtn;
-    Button statsBtn;
     SwipeFlingAdapterView flingContainer;
+    Toolbar toolbar;
 
     // Variables
     private CardArrayAdapter arrayAdapter;
@@ -60,14 +62,17 @@ public class MainActivity extends AppCompatActivity {
 
         dbHelper = new SQLiteDBHelper(MainActivity.this);
 
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Crate Digger");
+
+
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
-        getSupportActionBar().setTitle("Crate Digger");
 
         final HardcodedSongs hardcodedSongs = new HardcodedSongs();
 
@@ -155,9 +160,6 @@ public class MainActivity extends AppCompatActivity {
 
         dislikeBtn = (ImageButton) findViewById(R.id.left);
         likeBtn = (ImageButton) findViewById(R.id.right);
-        likedSongBtn = (Button) findViewById(R.id.likedSongBtn);
-        statsBtn = (Button) findViewById(R.id.statsBtn);
-
         dislikeBtn.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 flingContainer.getTopCardListener().selectLeft();
@@ -168,26 +170,28 @@ public class MainActivity extends AppCompatActivity {
                 flingContainer.getTopCardListener().selectRight();
             }
         });
-        likedSongBtn.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                goToLikedSongsActivity(v);
-            }
-        });
-        statsBtn.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View v){
-                goToStatsActivity(v);
-            }
-        });
 
         // TEST CODE ENDS 3
     }
-    public void goToLikedSongsActivity(View view){
-        Intent intent = new Intent (this, LikedSongActivity.class);
-        startActivity(intent);
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.main,menu);
+        return true;
     }
 
-    public void goToStatsActivity(View view){
-        Intent intent = new Intent (this, StatsActivity.class);
-        startActivity(intent);
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.showLikedSong:
+                Intent intent = new Intent (this, LikedSongActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.showStats:
+                Intent intentt = new Intent (this, StatsActivity.class);
+                startActivity(intentt);
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
