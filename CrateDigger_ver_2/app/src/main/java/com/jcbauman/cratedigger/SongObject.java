@@ -1,7 +1,6 @@
 package com.jcbauman.cratedigger;
 
-public class SongObject
-{
+public class SongObject {
     private int songId;
     private String songURI;
     private String songName;
@@ -13,11 +12,11 @@ public class SongObject
 
     //Constructors
 
-    public SongObject(){
+    public SongObject() {
 
     }
 
-    public SongObject(int songId, String songURI, String songName, String songArtist, String songImageURL, String songPreviewURL, String songSpotifyLink, String songGenre){
+    public SongObject(int songId, String songURI, String songName, String songArtist, String songImageURL, String songPreviewURL, String songSpotifyLink, String songGenre) {
         this.songId = songId;
         this.songURI = songURI;
         this.songName = songName;
@@ -60,13 +59,11 @@ public class SongObject
         this.songArtist = songArtist;
     }
 
-    public String getSongGenre()
-    {
+    public String getSongGenre() {
         return this.songGenre;
     }
 
-    public void setSongGenre(String genre)
-    {
+    public void setSongGenre(String genre) {
         this.songGenre = genre;
     }
 
