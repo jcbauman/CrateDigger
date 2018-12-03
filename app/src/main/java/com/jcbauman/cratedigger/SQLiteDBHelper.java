@@ -77,9 +77,9 @@ public class SQLiteDBHelper extends SQLiteOpenHelper
         return newRowId;
     }
 
-    public List<SongObject> getAllSongs()
+    public ArrayList<SongObject> getAllSongs()
     {
-        List<SongObject> songObjectsList = new ArrayList<SongObject>();
+        ArrayList<SongObject> songObjectsList = new ArrayList<SongObject>();
         String selectQuery = "SELECT * FROM " + TABLE_NAME
                 + " ORDER BY " + KEY_SONG_ID + " DESC";
         SQLiteDatabase db = this.getReadableDatabase();

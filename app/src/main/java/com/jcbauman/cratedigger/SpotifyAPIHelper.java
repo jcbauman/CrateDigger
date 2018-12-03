@@ -35,23 +35,23 @@ public class SpotifyAPIHelper extends DisplaySong{
     }
 
 
-    public void getATrack(String songURI){
-        SongObject song = new SongObject();
-        spotify.getTrack(songURI,new Callback<Track>()
-        {
-            @Override
-            public void success (Track track, Response response){
-                Log.d("Song success: name = ", track.name);
-            }
-
-            @Override
-            public void failure (RetrofitError error){
-                Log.d("Song failure", error.toString());
-            }
-        });
-        song = new SongObject(0,songURI,track.name,track.artists.toString(), "https://i.scdn.co/image/755a2683937d13f338c1aa09284db25ff50e9b70",track.preview_url,track.external_urls.get(0));
-        this.addSongObject(song);
-    }
+//    public void getATrack(String songURI){
+//        SongObject song = new SongObject();
+//        spotify.getTrack(songURI,new Callback<Track>()
+//        {
+//            @Override
+//            public void success (Track track, Response response){
+//                Log.d("Song success: name = ", track.name);
+//            }
+//
+//            @Override
+//            public void failure (RetrofitError error){
+//                Log.d("Song failure", error.toString());
+//            }
+//        });
+//        song = new SongObject(0,songURI,track.name,track.artists.toString(), "https://i.scdn.co/image/755a2683937d13f338c1aa09284db25ff50e9b70",track.preview_url,track.external_urls.get(0));
+//        this.addSongObject(song);
+//    }
 
     //THIS VERSION IS MORE EFFECTIVE BUT IT GIVES US ERRORS EVERY DAMN TIME
 //    public void getATrack(String songURI){
