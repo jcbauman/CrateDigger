@@ -560,7 +560,7 @@ public class HardcodedSongs extends  DisplaySong
         songObject = new SongObject();
         songObject.setSongArtist("Fitz and The Tantrums");
         songObject.setSongName("Out Of My League");
-        songObject.setSongImageURL("https://i.scdn.co/image/bf7b464032c397f498f897d8f89b663218b21f1d ");
+        songObject.setSongImageURL("https://i.scdn.co/image/bf7b464032c397f498f897d8f89b663218b21f1d");
         songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/454dfd2b54dad6440f49d6aa43557849f2480bd0?cid=774b29d4f13844c495f206cafdad9c86");
         songObject.setSongGenre("Alternative/Indie");
         songObject.setSongSpotifyLink("https://open.spotify.com/track/5qEn8c0MBzyRKgQq91Vevi");
