@@ -147,6 +147,7 @@ public class SQLiteDBHelper extends SQLiteOpenHelper
         return songObjectsList;
     }
 
+    //checks if the song has already been displayed
     public Boolean songSeen(String songLink){
         SQLiteDatabase database = getWritableDatabase();
         String query = "SELECT * FROM songs WHERE song_spotify_link = '" + songLink + "'";

@@ -56,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
     // SQLiteHelper
     SQLiteDBHelper dbHelper = null;
 
+    //SongLists
+    HardcodedSongs hardcodedSongs;
+    List<SongObject> hardcodedSongos;
+    List<SongObject> songObjectList;
+
     // Context
 //    Context context = MainActivity.this;
 
@@ -81,23 +86,29 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        final HardcodedSongs hardcodedSongs = new HardcodedSongs();
-        List<SongObject> songObjectList = new ArrayList<SongObject>();
-
+        hardcodedSongs = new HardcodedSongs();
+        songObjectList = new ArrayList<SongObject>();
         Collections.shuffle(hardcodedSongs.getSongObjectsList());
+        hardcodedSongos = hardcodedSongs.getSongObjectsList();
+
+        for(int i = 0; i < 5; i++)
+        {
+            songObjectList.add(hardcodedSongos.get(0));
+            hardcodedSongos.remove(0);
+        }
 
         // Start playing music for first card
         mediaPlayer = new MediaPlayer();
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
         try {
-            mediaPlayer.setDataSource(hardcodedSongs.getSongObjectsList().get(0).getSongPreviewURL());
+            mediaPlayer.setDataSource(songObjectList.get(0).getSongPreviewURL());
             mediaPlayer.prepare();
             mediaPlayer.start();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        arrayAdapter = new CardArrayAdapter(this, R.layout.item, hardcodedSongs.getSongObjectsList());
+        arrayAdapter = new CardArrayAdapter(this, R.layout.item, songObjectList);
 
         // Swipe Card Controls
         flingContainer = (SwipeFlingAdapterView) findViewById(R.id.frame);
@@ -107,13 +118,13 @@ public class MainActivity extends AppCompatActivity {
             public void removeFirstObjectInAdapter() {
                 // this is the simplest way to delete an object from the Adapter (/AdapterView)
                 Log.d("LIST", "removed object!");
-                hardcodedSongs.removeSoundObject();
+                songObjectList.remove(0);
                 arrayAdapter.notifyDataSetChanged();
 
                 mediaPlayer.stop();
                 mediaPlayer = new MediaPlayer();
                 try {
-                    mediaPlayer.setDataSource(hardcodedSongs.getSongObjectsList().get(0).getSongPreviewURL());
+                    mediaPlayer.setDataSource(songObjectList.get(0).getSongPreviewURL());
                     mediaPlayer.prepare();
                     mediaPlayer.start();
                 } catch (IOException e) {
@@ -132,12 +143,7 @@ public class MainActivity extends AppCompatActivity {
 
                 // TEST CODE START 5
 
-                RecommendationAlgorithm test = new RecommendationAlgorithm();
-                test.setGenreDataList(dbHelper.getGenreData());
-                System.out.println("LOOK OVER HERE FUCKER!!!! " + "BIAS = " + test.generateBias());
-                System.out.println("LOOK OVER HERE MAN!!!! " + dbHelper.songSeen("https://open.spotify.com/track/7e89621JPkKaeDSTQ3avtg"));
-
-//                hardcodedSongs.dislikedSong();
+                addNextSong();
                 Toast.makeText(MainActivity.this, "Disliked", Toast.LENGTH_SHORT).show();
                 // TEST CODE END 5
             }
@@ -150,22 +156,28 @@ public class MainActivity extends AppCompatActivity {
                 dbHelper.addSong(song);
                 List<SongObject> songObjects = dbHelper.getAllSongs();
 
-//                hardcodedSongs.likedSong();
+                addNextSong();
                 // TEST CODE END 6
                 Toast.makeText(MainActivity.this, "Liked", Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onAdapterAboutToEmpty(int itemsInAdapter) {
+            public void onAdapterAboutToEmpty(int numItems){
+
+            }
+
+            public void addNextSong() {
                 // Ask for more data here
 
                 // TEST CODE START 4
                 HardcodedSongs newHardcodedSongs = new HardcodedSongs();
                 List<SongObject> newSongObjects = newHardcodedSongs.getSongObjectsList();
-                for(int i = 0; i < newSongObjects.size(); i++)
-                {
-                    hardcodedSongs.addSongObject(newSongObjects.get(i));
-                }
+
+                //recommendation algorithm here:
+                RecommendationAlgorithm rec = new RecommendationAlgorithm();
+                rec.setGenreDataList(dbHelper.getGenreData());
+                songObjectList.add(getNextSongOfGenre(rec.generateBias(),hardcodedSongos));
+
                 // TEST CODE END 4
             }
 
@@ -226,6 +238,24 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    //returns the next song of chosen genre
+    public SongObject getNextSongOfGenre(String genreChoice, List<SongObject> songos){
+        String gen = "";
+        int i = -1;
+        while(gen != genreChoice && i<songos.size()-1){
+            i++;
+            String link = songos.get(i).getSongSpotifyLink();
+            System.out.println("FUCKLink = " + link);
+            if(dbHelper.songSeen(link)){
+                gen = songos.get(i).getSongGenre();
+            }
+        }
+        if(i==songos.size()){i=songos.size()-1;}
+        SongObject returnVal = songos.get(i);
+        songos.remove(i);
+        return returnVal;
     }
 
 
