@@ -1,5 +1,6 @@
 package com.jcbauman.cratedigger;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -54,6 +55,9 @@ public class MainActivity extends AppCompatActivity {
 
     // SQLiteHelper
     SQLiteDBHelper dbHelper = null;
+
+    // Context
+//    Context context = MainActivity.this;
 
     // TEST CODE END 2
 
@@ -126,6 +130,11 @@ public class MainActivity extends AppCompatActivity {
                 dbHelper.addSong(song);
 
                 // TEST CODE START 5
+
+                RecommendationAlgorithm test = new RecommendationAlgorithm();
+                test.setGenreDataList(dbHelper.getGenreData());
+                System.out.println("LOOK OVER HERE FUCKER!!!! " + "BIAS = " + test.generateBias());
+
                 hardcodedSongs.dislikedSong();
                 Toast.makeText(MainActivity.this, "Disliked", Toast.LENGTH_SHORT).show();
                 // TEST CODE END 5

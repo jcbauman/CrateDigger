@@ -167,45 +167,49 @@ public class SQLiteDBHelper extends SQLiteOpenHelper
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
-        // Loop through the table rows
-        do
+        // If TABLE had rows
+        if(cursor.moveToFirst())
         {
-            if(cursor.getInt(8) == 1) {
-                String currentGenre = cursor.getString(4);
-                if(currentGenre.equals("Rock"))
-                {
-                    rockGenre.incrementGenreAmount();
+            // Loop through the table rows
+            do
+            {
+                if(cursor.getInt(8) == 1) {
+                    String currentGenre = cursor.getString(4);
+                    if(currentGenre.equals("Rock"))
+                    {
+                        rockGenre.incrementGenreAmount();
+                    }
+                    else if(currentGenre.equals("Soul/Funk/R&B"))
+                    {
+                        soulFunkRBGenre.incrementGenreAmount();
+                    }
+                    else if(currentGenre.equals("Hip-Hop/Rap"))
+                    {
+                        hipHopRapGenre.incrementGenreAmount();
+                    }
+                    else if(currentGenre.equals("Alternative/Indie"))
+                    {
+                        alternativeIndieGenre.incrementGenreAmount();
+                    }
+                    else if(currentGenre.equals("Dance/Electronic"))
+                    {
+                        danceElectronicGenre.incrementGenreAmount();
+                    }
+                    else if(currentGenre.equals("World"))
+                    {
+                        worldGenre.incrementGenreAmount();
+                    }
+                    else if(currentGenre.equals("Other"))
+                    {
+                        otherGenre.incrementGenreAmount();
+                    }
+                    else if(currentGenre.equals("Jazz"))
+                    {
+                        jazzGenre.incrementGenreAmount();
+                    }
                 }
-                else if(currentGenre.equals("Soul/Funk/R&B"))
-                {
-                    soulFunkRBGenre.incrementGenreAmount();
-                }
-                else if(currentGenre.equals("Hip-Hop/Rap"))
-                {
-                    hipHopRapGenre.incrementGenreAmount();
-                }
-                else if(currentGenre.equals("Alternative/Indie"))
-                {
-                    alternativeIndieGenre.incrementGenreAmount();
-                }
-                else if(currentGenre.equals("Dance/Electronic"))
-                {
-                    danceElectronicGenre.incrementGenreAmount();
-                }
-                else if(currentGenre.equals("World"))
-                {
-                    worldGenre.incrementGenreAmount();
-                }
-                else if(currentGenre.equals("Other"))
-                {
-                    otherGenre.incrementGenreAmount();
-                }
-                else if(currentGenre.equals("Jazz"))
-                {
-                    jazzGenre.incrementGenreAmount();
-                }
-            }
-        } while(cursor.moveToNext());
+            } while(cursor.moveToNext());
+        }
 
         List<GenreData> genreDataList = new ArrayList<GenreData>();
         genreDataList.add(rockGenre);

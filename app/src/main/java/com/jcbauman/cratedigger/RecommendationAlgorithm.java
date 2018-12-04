@@ -7,16 +7,15 @@ import java.util.List;
 
 public class RecommendationAlgorithm
 {
-    Context context;
 //    private List<SongObject> songObjectList = new ArrayList<SongObject>();
     private List<GenreData> genreDataList = new ArrayList<GenreData>();
 
     // Constructor
 
-    public void setContext(Context context)
-    {
-        this.context = context;
-    }
+//    public void setContext(Context context)
+//    {
+//        this.context = context;
+//    }
 
 //    // if you need to add songs one by one use this
 //    public void addSongObject(SongObject songObject)
@@ -31,10 +30,9 @@ public class RecommendationAlgorithm
 //    }
 
     // Get genre stats
-    public void setGenreDataList()
+    public void setGenreDataList(List<GenreData> genreDataList)
     {
-        SQLiteDBHelper dbHelper = new SQLiteDBHelper(context);
-        genreDataList = dbHelper.getGenreData();
+        this.genreDataList = genreDataList;
     }
 
     // Algorithm for Bias Choice
@@ -68,7 +66,7 @@ public class RecommendationAlgorithm
             probs[i] /= total;
         }
 
-        int index = probs.length-1;
+        int index = 0;
         double randomNumber = Math.random();
 
         for(int i = 0; i < probs.length; i++)
