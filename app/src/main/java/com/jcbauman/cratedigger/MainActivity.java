@@ -18,6 +18,7 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.github.mikephil.charting.data.PieEntry;
@@ -78,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
 
         final HardcodedSongs hardcodedSongs = new HardcodedSongs();
 
+        Collections.shuffle(hardcodedSongs.getSongObjectsList());
+
         // Start playing music for first card
         mediaPlayer = new MediaPlayer();
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
@@ -118,6 +121,9 @@ public class MainActivity extends AppCompatActivity {
                 //Do something on the left!
                 //You also have access to the original object.
                 //If you want to use it just cast it (String) dataObject
+                SongObject song = (SongObject) dataObject;
+                song.setSongLiked(0);
+                dbHelper.addSong(song);
 
                 // TEST CODE START 5
                 hardcodedSongs.dislikedSong();
@@ -128,7 +134,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onRightCardExit(Object dataObject) {
                 // TEST CODE START 6
-                dbHelper.addSong((SongObject) dataObject);
+                SongObject song = (SongObject) dataObject;
+                song.setSongLiked(1);
+                dbHelper.addSong(song);
                 List<SongObject> songObjects = dbHelper.getAllSongs();
 
                 hardcodedSongs.likedSong();
