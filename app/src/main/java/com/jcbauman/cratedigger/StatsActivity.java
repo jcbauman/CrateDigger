@@ -173,8 +173,6 @@ public class StatsActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.backToMain:
-                Intent intent = new Intent (this, MainActivity.class);
-                startActivity(intent);
                 finish();
         }
         return super.onOptionsItemSelected(item);

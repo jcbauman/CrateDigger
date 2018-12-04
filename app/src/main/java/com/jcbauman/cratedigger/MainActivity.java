@@ -130,10 +130,6 @@ public class MainActivity extends AppCompatActivity {
                 // TEST CODE START 6
                 dbHelper.addSong((SongObject) dataObject);
                 List<SongObject> songObjects = dbHelper.getAllSongs();
-                for(int i = 0; i < songObjects.size(); i++)
-                {
-                    System.out.println("LOOK OVER HERE!!!!!!!!!!!!!! " + songObjects.get(i).getSongName());
-                }
 
                 hardcodedSongs.likedSong();
                 // TEST CODE END 6
