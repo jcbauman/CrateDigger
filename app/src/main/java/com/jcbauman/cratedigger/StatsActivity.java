@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -23,13 +24,14 @@ public class StatsActivity extends AppCompatActivity {
     PieChart pieChart;
     SQLiteDBHelper dbHelper;
     Toolbar toolbar;
+    TextView genreText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats);
 
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Your Genre Stats");
 
@@ -67,6 +69,9 @@ public class StatsActivity extends AppCompatActivity {
         if(genreVals[6]>0){
             yValues.add(new PieEntry(genreVals[6],"Other"));
         }
+        if(genreVals[7]>0){
+            yValues.add(new PieEntry(genreVals[6],"Jazz"));
+        }
         //add in case of empty set
         if(yValues.size()==0) {
             yValues.add(new PieEntry(34f, "No songs liked yet"));
@@ -90,10 +95,17 @@ public class StatsActivity extends AppCompatActivity {
         data.setValueTextColor(Color.BLACK);
 
         pieChart.setData(data);
+        genreText = (TextView)findViewById(R.id.genreMessage);
+        if(yValues.size()==0) {
+            genreText.setText("Swipe on more songs to see your stats.");
+        }
+        else{
+            genreText.setText("You dig the '" + getTopGenre(genreVals) + "' genre most.");
+        }
     }
 
     public int[] getGenreStatistics(){
-        int rock = 0, soul = 0, hip = 0, alt = 0, electro = 0, world = 0, other = 0;
+        int rock = 0, soul = 0, hip = 0, alt = 0, electro = 0, world = 0, other = 0, jazz = 0;
         dbHelper = new SQLiteDBHelper(StatsActivity.this);
         dbHelper.getWritableDatabase();
         ArrayList<SongObject> list = dbHelper.getLikedSongs();
@@ -121,9 +133,12 @@ public class StatsActivity extends AppCompatActivity {
                 if (genre.equals("Other")) {
                     other++;
                 }
+                if (genre.equals("Jazz")) {
+                    jazz++;
+                }
             }
         }
-        int[] songVal = {rock, soul, hip, alt, electro, world, other};
+        int[] songVal = {rock, soul, hip, alt, electro, world, other, jazz};
         return songVal;
     }
 
@@ -159,6 +174,9 @@ public class StatsActivity extends AppCompatActivity {
             if(maxIndex == 6){
                 max = "Other";
             }
+            if(maxIndex == 7){
+                max = "Jazz";
+            }
         }
         return max;
     }
@@ -172,7 +190,7 @@ public class StatsActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
-            case R.id.backToMain:
+            case R.id.BackToMain:
                 finish();
         }
         return super.onOptionsItemSelected(item);

@@ -11,12 +11,22 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        android:id="@+id/toolbar" />
+        android:id="@+id/toolbar2" />
 
     <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/piechart"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:id="@+id/piechart">
-    </com.github.mikephil.charting.charts.PieChart>
+        android:layout_height="500dp"></com.github.mikephil.charting.charts.PieChart>
+
+    <TextView
+        android:id="@+id/genreMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/piechart"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:text="TextView"
+        android:textColor="@color/cardview_light_background"
+        app:fontFamily="sans-serif" />
 
 </RelativeLayout>
