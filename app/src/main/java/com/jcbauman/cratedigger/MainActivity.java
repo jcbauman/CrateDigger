@@ -18,6 +18,7 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.github.mikephil.charting.data.PieEntry;
@@ -78,6 +79,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         final HardcodedSongs hardcodedSongs = new HardcodedSongs();
+
+        Collections.shuffle(hardcodedSongs.getSongObjectsList());
 
         // Start playing music for first card
         mediaPlayer = new MediaPlayer();
