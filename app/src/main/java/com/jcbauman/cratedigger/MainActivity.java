@@ -182,7 +182,6 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onPause();
         mediaPlayer.pause();
-        // testing out github
     }
 
     @Override
