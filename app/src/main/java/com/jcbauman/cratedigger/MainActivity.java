@@ -175,6 +175,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onPause()
+    {
+        super.onPause();
+        mediaPlayer.pause();
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        mediaPlayer.start();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.main,menu);
         return true;
@@ -184,10 +198,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.showLikedSong:
+//                mediaPlayer.pause();
                 Intent intent = new Intent (this, LikedSongActivity.class);
                 startActivity(intent);
                 break;
             case R.id.showStats:
+//                mediaPlayer.pause();
                 Intent intentt = new Intent (this, StatsActivity.class);
                 startActivity(intentt);
                 break;
