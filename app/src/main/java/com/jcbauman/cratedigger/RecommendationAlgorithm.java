@@ -1,6 +1,10 @@
 package com.jcbauman.cratedigger;
 
+import android.app.Application;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.support.v7.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +13,7 @@ public class RecommendationAlgorithm
 {
 //    private List<SongObject> songObjectList = new ArrayList<SongObject>();
     private List<GenreData> genreDataList = new ArrayList<GenreData>();
-
+    int algPref = 2;
     // Constructor
 
 //    public void setContext(Context context)
@@ -33,6 +37,10 @@ public class RecommendationAlgorithm
     public void setGenreDataList(List<GenreData> genreDataList)
     {
         this.genreDataList = genreDataList;
+    }
+
+    public void setAlgPref(int pref){
+        algPref = pref;
     }
 
     // Algorithm for Bias Choice
@@ -61,6 +69,19 @@ public class RecommendationAlgorithm
             probs[i] = this.genreDataList.get(i).getGenreAmount();
             total += this.genreDataList.get(i).getGenreAmount();
         }
+        System.out.println("Alg pref: " + algPref);
+
+        //change alg based on preferences
+        int topGenre = getTopGenre(probs);
+        if(topGenre>-1){
+            probs[topGenre] = (probs[topGenre]+(algPref-2));
+            total += (algPref - 2);
+            }
+            while(probs[topGenre]<0){
+                probs[topGenre] = (probs[topGenre] + 1);
+                total++;
+        }
+
         for(int i = 0; i < this.genreDataList.size(); i++)
         {
             probs[i] /= total;
@@ -84,6 +105,19 @@ public class RecommendationAlgorithm
 
         bias = this.genreDataList.get(index).getGenreName();
 
+        System.out.println("Bias" + bias);
         return bias;
+    }
+
+    public int getTopGenre(double[] songVal) {
+        double maxVal = 0;
+        int maxIndex = -1;
+        for (int i = 0; i < songVal.length; i++) {
+            if (songVal[i] > maxVal) {
+                maxVal = songVal[i];
+                maxIndex = i;
+            }
+        }
+        return maxIndex;
     }
 }

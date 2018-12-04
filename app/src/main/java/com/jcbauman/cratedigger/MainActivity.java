@@ -2,6 +2,7 @@ package com.jcbauman.cratedigger;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -14,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.SeekBar;
 import android.widget.Toast;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     SwipeFlingAdapterView flingContainer;
     Toolbar toolbar;
 
+
     // Variables
     private CardArrayAdapter arrayAdapter;
 
@@ -73,6 +76,10 @@ public class MainActivity extends AppCompatActivity {
 
         // TEST CODE STARTS 3
 
+        //Save preferences
+        final SharedPreferences pre = getSharedPreferences("Pref", Context.MODE_PRIVATE);
+        pre.edit().putInt("Algorithm_Preference", 2).apply();
+
         dbHelper = new SQLiteDBHelper(MainActivity.this);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -91,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         Collections.shuffle(hardcodedSongs.getSongObjectsList());
         hardcodedSongos = hardcodedSongs.getSongObjectsList();
 
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < 2; i++)
         {
             songObjectList.add(hardcodedSongos.get(0));
             hardcodedSongos.remove(0);
@@ -168,7 +175,6 @@ public class MainActivity extends AppCompatActivity {
 
             public void addNextSong() {
                 // Ask for more data here
-
                 if(hardcodedSongos.size()>0) {
                     // TEST CODE START 4
                     HardcodedSongs newHardcodedSongs = new HardcodedSongs();
@@ -177,6 +183,8 @@ public class MainActivity extends AppCompatActivity {
                     //recommendation algorithm here:
                     RecommendationAlgorithm rec = new RecommendationAlgorithm();
                     rec.setGenreDataList(dbHelper.getGenreData());
+
+                    rec.setAlgPref(pre.getInt("Algorithm_Preference", 2)); // 0: default value
                     songObjectList.add(getNextSongOfGenre(rec.generateBias(), hardcodedSongos));
                 }
                 else{
@@ -257,14 +265,15 @@ public class MainActivity extends AppCompatActivity {
         while(gen != genreChoice && i<songos.size()-1){
             i++;
             String link = songos.get(i).getSongSpotifyLink();
-            System.out.println("FUCKLink = " + link);
             if(dbHelper.songSeen(link)){
                 gen = songos.get(i).getSongGenre();
             }
+            //System.out.println("Choice genre = " + genreChoice + " and found genre = " + gen);
         }
         if(i==songos.size()){i=songos.size()-1;}
         SongObject returnVal = songos.get(i);
         songos.remove(i);
+        //System.out.println("It's genre is" + returnVal.getSongGenre());
         return returnVal;
     }
 

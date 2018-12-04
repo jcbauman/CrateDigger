@@ -1,12 +1,15 @@
 package com.jcbauman.cratedigger;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.animation.Easing;
@@ -25,6 +28,7 @@ public class StatsActivity extends AppCompatActivity {
     SQLiteDBHelper dbHelper;
     Toolbar toolbar;
     TextView genreText;
+    SeekBar seekbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +38,17 @@ public class StatsActivity extends AppCompatActivity {
         toolbar = (Toolbar) findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Your Genre Stats");
+        seekbar = (SeekBar) findViewById(R.id.seekBar);
 
+        final SharedPreferences pre = getSharedPreferences("Pref", Context.MODE_PRIVATE);
+        //pre.edit().putInt("Algorithm_Preference", 2).apply();
+        int progress = pre.getInt("Algorithm_Preference", 0); // 0: default value
+        seekbar.setProgress(progress);
 
         pieChart = (PieChart) findViewById(R.id.piechart);
         pieChart.setUsePercentValues(true);
         pieChart.getDescription().setEnabled(true);
-        pieChart.setExtraOffsets(5,30,5,5);
+        pieChart.setExtraOffsets(5, 30, 5, 5);
 
         pieChart.setDragDecelerationFrictionCoef(0.99f);
         pieChart.setDrawHoleEnabled(true);
@@ -48,37 +57,36 @@ public class StatsActivity extends AppCompatActivity {
 
         ArrayList<PieEntry> yValues = new ArrayList<>();
         int[] genreVals = getGenreStatistics();
-        if(genreVals[0]>0){
-            yValues.add(new PieEntry(genreVals[0],"Rock"));
+        if (genreVals[0] > 0) {
+            yValues.add(new PieEntry(genreVals[0], "Rock"));
         }
-        if(genreVals[1]>0){
-            yValues.add(new PieEntry(genreVals[1],"Soul/Funk/R&B"));
+        if (genreVals[1] > 0) {
+            yValues.add(new PieEntry(genreVals[1], "Soul/Funk/R&B"));
         }
-        if(genreVals[2]>0){
-            yValues.add(new PieEntry(genreVals[2],"Hip-Hop/Rap"));
-         }
-         if(genreVals[3]>0){
-            yValues.add(new PieEntry(genreVals[3],"Alternative/Indie"));
+        if (genreVals[2] > 0) {
+            yValues.add(new PieEntry(genreVals[2], "Hip-Hop/Rap"));
         }
-        if(genreVals[4]>0){
-            yValues.add(new PieEntry(genreVals[4],"Dance/Electronic"));
+        if (genreVals[3] > 0) {
+            yValues.add(new PieEntry(genreVals[3], "Alternative/Indie"));
         }
-        if(genreVals[5]>0){
-            yValues.add(new PieEntry(genreVals[5],"World"));
+        if (genreVals[4] > 0) {
+            yValues.add(new PieEntry(genreVals[4], "Dance/Electronic"));
         }
-        if(genreVals[6]>0){
-            yValues.add(new PieEntry(genreVals[6],"Other"));
+        if (genreVals[5] > 0) {
+            yValues.add(new PieEntry(genreVals[5], "World"));
         }
-        if(genreVals[7]>0){
-            yValues.add(new PieEntry(genreVals[7],"Jazz"));
+        if (genreVals[6] > 0) {
+            yValues.add(new PieEntry(genreVals[6], "Other"));
+        }
+        if (genreVals[7] > 0) {
+            yValues.add(new PieEntry(genreVals[7], "Jazz"));
         }
         //add in case of empty set
-        genreText = (TextView)findViewById(R.id.genreMessage);
-        if(yValues.size()==0) {
+        genreText = (TextView) findViewById(R.id.genreMessage);
+        if (yValues.size() == 0) {
             yValues.add(new PieEntry(34f, "No songs liked yet"));
             genreText.setText("Swipe on more songs to see your stats.");
-        }
-        else{
+        } else {
             genreText.setText("You have been digging the '" + getTopGenre(genreVals) + "' genre most.");
         }
 
@@ -90,7 +98,7 @@ public class StatsActivity extends AppCompatActivity {
 
         pieChart.getLegend().setEnabled(false);
 
-        PieDataSet dataSet = new PieDataSet(yValues,"Your Genre Stats");
+        PieDataSet dataSet = new PieDataSet(yValues, "Your Genre Stats");
         dataSet.setSliceSpace(3f);
         dataSet.setSelectionShift(5f);
         dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
@@ -100,6 +108,23 @@ public class StatsActivity extends AppCompatActivity {
         data.setValueTextColor(Color.BLACK);
 
         pieChart.setData(data);
+
+        //update preferences when changed
+        seekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
+                pre.edit().putInt("Algorithm_Preference", progress).apply();
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 
     public int[] getGenreStatistics(){
@@ -179,6 +204,7 @@ public class StatsActivity extends AppCompatActivity {
         return max;
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.stats,menu);
@@ -193,4 +219,6 @@ public class StatsActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    //public int get
 }

@@ -665,6 +665,14 @@ public class HardcodedSongs extends  DisplaySong
         songObject.setSongSpotifyLink("https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn");
         this.addSongObject(songObject);
 
+        songObject = new SongObject();
+        songObject.setSongArtist("The Impressions");
+        songObject.setSongName("Seven Years");
+        songObject.setSongImageURL("https://i.scdn.co/image/65d436ff8a2df9fcab5091e84f2786f8c65ebb0f");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/3406ff25689195951f04d35fdf8defa9e25a4028?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Soul/Funk/R&B");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/4CizK36Hxq8tYxi5qYypfN?si=xfjp9LjPTgmB0x00gdHTnA");
+        this.addSongObject(songObject);
 
 //        songObject = new SongObject();
 //        songObject.setSongArtist("");
