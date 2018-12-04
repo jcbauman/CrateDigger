@@ -1,8 +1,12 @@
 package com.jcbauman.cratedigger;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
@@ -18,18 +22,22 @@ public class StatsActivity extends AppCompatActivity {
 
     PieChart pieChart;
     SQLiteDBHelper dbHelper;
-
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats);
-        //getSupportActionBar().setTitle("Your Genre Stats");
+
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Your Genre Stats");
+
 
         pieChart = (PieChart) findViewById(R.id.piechart);
         pieChart.setUsePercentValues(true);
         pieChart.getDescription().setEnabled(true);
-        pieChart.setExtraOffsets(5,10,5,5);
+        pieChart.setExtraOffsets(5,30,5,5);
 
         pieChart.setDragDecelerationFrictionCoef(0.99f);
         pieChart.setDrawHoleEnabled(true);
@@ -153,5 +161,22 @@ public class StatsActivity extends AppCompatActivity {
             }
         }
         return max;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.stats,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+        switch(item.getItemId()){
+            case R.id.backToMain:
+                Intent intent = new Intent (this, MainActivity.class);
+                startActivity(intent);
+                finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
