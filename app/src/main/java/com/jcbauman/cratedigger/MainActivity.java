@@ -17,7 +17,11 @@ import android.widget.Toast;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+
+import com.github.mikephil.charting.data.PieEntry;
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 
 import kaaes.spotify.webapi.android.SpotifyApi;
@@ -66,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Crate Digger");
 
-
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -75,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         final HardcodedSongs hardcodedSongs = new HardcodedSongs();
+
+        Collections.shuffle(hardcodedSongs.getSongObjectsList());
 
         // Start playing music for first card
         mediaPlayer = new MediaPlayer();
@@ -175,6 +180,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onPause()
+    {
+        super.onPause();
+        mediaPlayer.pause();
+    }
+
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        mediaPlayer.start();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.main,menu);
         return true;
@@ -184,14 +203,18 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
             case R.id.showLikedSong:
+//                mediaPlayer.pause();
                 Intent intent = new Intent (this, LikedSongActivity.class);
                 startActivity(intent);
                 break;
             case R.id.showStats:
+//                mediaPlayer.pause();
                 Intent intentt = new Intent (this, StatsActivity.class);
                 startActivity(intentt);
                 break;
         }
         return super.onOptionsItemSelected(item);
     }
+
+
 }
