@@ -287,6 +287,385 @@ public class HardcodedSongs extends  DisplaySong
         songObject.setSongSpotifyLink("https://open.spotify.com/track/0lYBSQXN6rCTvUZvg9S0lU");
         this.addSongObject(songObject);
 
+        songObject = new SongObject();
+        songObject.setSongArtist("San Holo");
+        songObject.setSongName("Light");
+        songObject.setSongImageURL("https://i.scdn.co/image/83dfeeb23116e671bcbe9c1dd2c39bcf71db555a");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/5f7ee64a3b07b9523505439dcb3c588381ab1224?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Dance/Electronic");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/6jq6rcOikCZAmjliAgAmfT");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Daft Punk");
+        songObject.setSongName("Harder Better Faster Stronger");
+        songObject.setSongImageURL("https://i.scdn.co/image/f04bb6fba32e89475d9981007aff21e13745dec2");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/92a04c7c0e96bf93a1b1b1cae7dfff1921969a7b?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Dance/Electronic");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/5W3cjX2J3tjhG8zb6u0qHn");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Eminem");
+        songObject.setSongName("Killshot");
+        songObject.setSongImageURL("https://i.scdn.co/image/472a45210543a502405bf4f357005e7a182906d7");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/5522afbe8a7c52b5f99e6eb6a47d7bdee3fb8b1d?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Hip-Hop/Rap");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/1jo3TwNGCXfNdB5uba3ZVv");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Logic, Alessia Cara, Khalid");
+        songObject.setSongName("1-800-273-8255");
+        songObject.setSongImageURL("https://i.scdn.co/image/3df14cbaac20470a0b8523420eeae52e6849960f");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/db9d48e8b5cae63aebb19b2e45c6aca050e06026?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Hip-Hop/Rap");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/5tz69p7tJuGPeMGwNTxYuV");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Drake");
+        songObject.setSongName("God's Plan");
+        songObject.setSongImageURL("https://i.scdn.co/image/239ec906572231368d8ebd72614094bd3bd10b33");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/31210c42323914bd3ef87df4d817a1a184cc7ae0?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Hip-Hop/Rap");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/6DCZcSspjsKoFjzjrWoCdn");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Drake");
+        songObject.setSongName("I'm Upset");
+        songObject.setSongImageURL("https://i.scdn.co/image/239ec906572231368d8ebd72614094bd3bd10b33");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/41f82c2b12eb88223deac93aebfb81903e0b8c27?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Hip-Hop/Rap");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/3qN5qMTKyEEmiTZD38BNTT");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Eminem");
+        songObject.setSongName("Fall");
+        songObject.setSongImageURL("https://i.scdn.co/image/706834f25e3b96ddc4643277e11333f0a8ca16c0");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/2b38ecc7b3f2674e431599190b02ce6aa9796ea2?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Hip-Hop/Rap");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/58QhkbaAkLFnn7JwAnAato");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("50 Cent");
+        songObject.setSongName("In Da Club");
+        songObject.setSongImageURL("https://i.scdn.co/image/58a07596d44402f7f40d32589fe99fc5d1f95f4d");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/54633fb1c75af27495e491a0889ddf02ec3ad25e?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Hip-Hop/Rap");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/4RY96Asd9IefaL3X4LOLZ8");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Fetty Wap");
+        songObject.setSongName("Trap Queen");
+        songObject.setSongImageURL("https://i.scdn.co/image/5aa0bd2874ec6ae0885adc84bb02d5ffce6f8cc2");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/62bf932cdc4d351174128d974397f5093de4f994?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Hip-Hop/Rap");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/2d8JP84HNLKhmd6IYOoupQ");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("The Weeknd, Daft Punk");
+        songObject.setSongName("Starboy");
+        songObject.setSongImageURL("https://i.scdn.co/image/387c963be76db261c25a1811546ac802ebc8f67c");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/e01d459eacfbf519a77a94dcbc3398b40c7ee601?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Soul/Funk/R&B");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/7MXVkk9YMctZqd1Srtv4MB");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Rihanna, JAY Z");
+        songObject.setSongName("Umbrella");
+        songObject.setSongImageURL("https://i.scdn.co/image/bce0e821755b24afe7cece9e8d73620df7274dcf");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/d2f6c09abf795c6842cab7e60310cd7cd10898c5?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Hip-Hop/Rap");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/49FYlytm3dAAraYgpoJZux");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Th Weeknd");
+        songObject.setSongName("Can't Feel My Face");
+        songObject.setSongImageURL("https://i.scdn.co/image/32d91abbb59d3b1e6a6bf354a33d8830a3a3530f");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/7ad50d9f822e855476b90de215e6370175065f8b?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Soul/Funk/R&B");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/22VdIZQfgXJea34mQxlt81");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Bob Marley");
+        songObject.setSongName("Is This Love");
+        songObject.setSongImageURL("https://i.scdn.co/image/4914dae56a9f22a53f502aad76f9f78ca0f0725d");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/de79d8d6a6f969a51ba330d683a4c78c89dda0c7?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Other");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/6eokVph5Yty6I3NnleHgmm");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Bob Marley");
+        songObject.setSongName("No Woman, No Cry - Live At The Lyceum, London/1975");
+        songObject.setSongImageURL("https://i.scdn.co/image/eba1539763378eb7755f997c57d725d4ff613cb3");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/5daf0d5338f61443311eea0cd664e60611035904?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Other");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/423hwXFgoN8RYmqLoLuVvY");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Fela Kuti ft. Ginger Baker");
+        songObject.setSongName("Black Man's Cry");
+        songObject.setSongImageURL("https://i.scdn.co/image/e4ab4a0633e6e0400e316438ae9b65e560773229");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/f0a419fa0c3cb369a782fd0dd0876bbbb566b3b6?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("World");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/5iLp7H9jMIj00DJs1G4mbn");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Earth, Wind & Fire");
+        songObject.setSongName("September");
+        songObject.setSongImageURL("https://i.scdn.co/image/c6e16cafc38a72eaf953b4b828c1faa114190a43");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/5fce831e28eb2ae69f1c44e340c2368c228e0764?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Soul/Funk/R&B");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/5nNmj1cLH3r4aA4XDJ2bgY");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Milt Jackson");
+        songObject.setSongName("Bags' Groove");
+        songObject.setSongImageURL("https://i.scdn.co/image/71624044d3ad28ab259fc4ca9f6c8562a326b66f");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/fad9d6ded7778f98a3e44328e32b6f59945fdda7?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Jazz");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/1FGP7KqNANyPi10M3PkFtY");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Milt Jackson");
+        songObject.setSongName("Olinga");
+        songObject.setSongImageURL("https://i.scdn.co/image/1ee578e712253e2792daf2a9c15b8dd11aaca99a");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/85092a4cfa81f1729f0d03838e816349d3309744?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Jazz");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/4q5wg6MFFg96ud5SDxaqvQ");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Ella Fitzgerald, Louis Armstrong");
+        songObject.setSongName("Dream A Little Dream Of Me");
+        songObject.setSongImageURL("https://i.scdn.co/image/0901c84ce6da1a8581046f3ef17e1588268f1787");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/26e3017404ccf9d5c8151da3f2b9fea3c14eb57c?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Jazz");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/5MjAGtm2ihbBK9G30ZN3Ju");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Ella Fitzgerald, Louis Armstrong");
+        songObject.setSongName("Cheek To Cheek");
+        songObject.setSongImageURL("https://i.scdn.co/image/2e77ba0e800dfc3c8ca88d8c36cf1721c6bc51cf");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/f011fbe55514c8a9dfc117ebea3c855db23316a0?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Jazz");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/1gcuhZPKmTYvn5VT5EZLR6");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("The Dave Brubeck Quartet");
+        songObject.setSongName("Take Five");
+        songObject.setSongImageURL("https://i.scdn.co/image/c802f3432473acd809760da577996ae2890c75aa");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/e07188169190e5892b6425d0ddae3673d375427d?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Jazz");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/1YQWosTIljIvxAgHWTp7KP");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("The Dave Brubeck Quartet");
+        songObject.setSongName("Unsquare Dance");
+        songObject.setSongImageURL("https://i.scdn.co/image/0311e2e5aef38a6bcdaca3dd7f333e4621ed88f7");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/481e53155c281482f1fef1845f2a83d0ab35cab1?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Jazz");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/2VUo8O3ymKRYNgj97ZG2kM");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Thelonious Monk");
+        songObject.setSongName("`Round Midnight");
+        songObject.setSongImageURL("https://i.scdn.co/image/92d42a424902c4eabc5ea51b6830a51e7ef58e37");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/30c12035b17aac0e8076eae7fb054acd7cad8d16?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Jazz");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/1wl5b2lw3YagQtZiYZbQWP");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Miles Davis");
+        songObject.setSongName("So What");
+        songObject.setSongImageURL("https://i.scdn.co/image/01f81fbd70d1cef051806e892e6db4e49224697b");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/e692f71aa410f2dd6dc50e59e7f75e31d925aca5?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Jazz");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/4vLYewWIvqHfKtJDk8c8tq");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Oscar Peterson, Connie Kay, Herb Ellis, Ray Brown");
+        songObject.setSongName("My Funny Valentine - Mono Version");
+        songObject.setSongImageURL("https://i.scdn.co/image/fbd2b0f475c5cfd65359b3ab2137aabc0b5eecab");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/3e922bd25314009422455318578cd1559797a01f?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Jazz");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/3FZZhKwXDcqUZN4gulL1je");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Billie Holiday");
+        songObject.setSongName("Strange Fruit");
+        songObject.setSongImageURL("https://i.scdn.co/image/1a4cffadbe2d36b9597fa97555358ff5afd6b7ec");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/d69e122b02ba67e20ab6d8a329f096c83805e2b4?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Jazz");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/6W5706MsehAWMAZLIg9Fu2");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Cage The Elephant");
+        songObject.setSongName("Trouble");
+        songObject.setSongImageURL("https://i.scdn.co/image/a13016817c0496ee44a48adc80b5c345e8c8925e");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/809d189e8d99db8200488185750355465d6b64a5?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Alternative/Indie");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/5n0CTysih20NYdT2S0Wpe8");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Capital Cities");
+        songObject.setSongName("Safe And Sound");
+        songObject.setSongImageURL("https://i.scdn.co/image/5b5b97a268f39426c8bf1ada36606e6fcbb317eb");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/896ae94d6d36e855c3692a18e066840133bed843?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Alternative/Indie");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/6Z8R6UsFuGXGtiIxiD8ISb");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("The Temper Trap");
+        songObject.setSongName("Sweet Disposition");
+        songObject.setSongImageURL("https://i.scdn.co/image/09c93c23196c9e57fef5cadb87241857f300983e");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/385f0135b7ba06c3ac3bdbadd15eb9b02c5ecdf0?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Alternative/Indie");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/5RoIXwyTCdyUjpMMkk4uPd");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Jaymes Young");
+        songObject.setSongName("I'll Be Good");
+        songObject.setSongImageURL("https://i.scdn.co/image/558c0cc588bd76d349ef10f2142e26a44354c4bf");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/0c94dde2f13273e3ed1eec72cb184537d0ae77d2?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Alternative/Indie");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/5WLSak7DN3LY1K71oWYuoN");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Fitz and The Tantrums");
+        songObject.setSongName("Out Of My League");
+        songObject.setSongImageURL("https://i.scdn.co/image/bf7b464032c397f498f897d8f89b663218b21f1d ");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/454dfd2b54dad6440f49d6aa43557849f2480bd0?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Alternative/Indie");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/5qEn8c0MBzyRKgQq91Vevi");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("John Denver");
+        songObject.setSongName("Take Me Home, Country Roads - Rerecorded");
+        songObject.setSongImageURL("https://i.scdn.co/image/37008443bd35f72ff56bb1c67ba4174c12c60837");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/ec43998cba1a71480be11c069a68197db2c75928?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Other");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/2xYlyywNgefLCRDG8hlxZq");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Twenty One Pilots");
+        songObject.setSongName("Car Radio");
+        songObject.setSongImageURL("https://i.scdn.co/image/720e15f97da5c03662d2e5f31d4dbc7e14aa4cf1");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/ea3ed2e51bccacc2791af5686520e8f9abf0ef65?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Other");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/5cbpoIu3YjoOwbBDGUEp3P");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Post Malone, Swae Lee");
+        songObject.setSongName("Sunflower - Spider-Man: Into the Spider-Verse");
+        songObject.setSongImageURL("https://i.scdn.co/image/c30bfc4adfa8924e87f3dff571d0d8c6f032fa0a");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/54c64f2c5c0dbb094226e7a3d1617195ed0aa448?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Hip-Hop/Rap");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/1A6OTy97kk0mMdm78rHsm8");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("gnash, Olivia O'Brien");
+        songObject.setSongName("i hate u, i love u (feat. olivia o'brien)");
+        songObject.setSongImageURL("https://i.scdn.co/image/cf2c83d30a116cc09e795dcab484f4d663846ba0");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/915f200cd1d5ed99ca02c1d290d7729df84b7580?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Other");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/7vRriwrloYVaoAe3a9wJHe");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Parov Stelar");
+        songObject.setSongName("Booty Swing");
+        songObject.setSongImageURL("https://i.scdn.co/image/db890f9df1b55bc76070c25eed0dbb5b1670733c");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/a3f32fd933fb3e7764694446bbedf669c328d5ca?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Other");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/3sMleqdCDalZ6xsAQe8xuY");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Tristam, Braken");
+        songObject.setSongName("Flight");
+        songObject.setSongImageURL("https://i.scdn.co/image/af96aa0adcd2b459b5625bd364c942a323976ac4");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/84ce7f7aaea7c2117c6c29c261a5bb58bea61e4e?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Other");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/66WcaWVGRFmpx0euxmw9yM");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Pegboard Nerds");
+        songObject.setSongName("Hero (feat. Elizaveta)");
+        songObject.setSongImageURL("https://i.scdn.co/image/b82a46c72612d81e5af283ece5bd6ee2ba6613b5");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/de4ccd70f27d95f15a98ffc7d5dbe74aec096dd1?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Other");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/1mPPo1eG1joz3HX0Ecw9LL");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Caravan Palace");
+        songObject.setSongName("Lone Digger");
+        songObject.setSongImageURL("https://i.scdn.co/image/c9b9052483cf7cf196a2c13889b6b0dc8451a125");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/c7cb1fe3466ffddaafb567498ab1daa1adbf020f?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Other");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/0thLhIqWsqqycEqFONOyhu");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Fela Kuti");
+        songObject.setSongName("Water No Get Enemy");
+        songObject.setSongImageURL("https://i.scdn.co/image/3794821e7020fea2a09502c095f44827e5987816");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/bb2efddd59d5827e7aefe5afc7cac73fbb0d545b?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("World");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/35TrgfOPoBpHp2XF3EHN1J");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Edward Sharpe & The Magnetic Zeros");
+        songObject.setSongName("Home");
+        songObject.setSongImageURL("https://i.scdn.co/image/87fd1b33f3208d7d3a3bbfb3d4f22ab089dc0d4e");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/8e1ff07117c78984d221597a80148e80eae6e146?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("World");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/7w5cxTEzp1rfV3KCy0Bd5N");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Twenty One Pilots");
+        songObject.setSongName("Stressed Out");
+        songObject.setSongImageURL("https://i.scdn.co/image/cd5eb6933cca9421578e3badfed816f046f3a86e");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/0e0951b811f06fea9162eb7e95e4bae4802d97af?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Rock");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/3CRDbSIZ4r5MsZ0YwxuEkn");
+        this.addSongObject(songObject);
+
+
 //        songObject = new SongObject();
 //        songObject.setSongArtist("");
 //        songObject.setSongName("");
