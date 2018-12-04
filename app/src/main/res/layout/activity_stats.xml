@@ -61,7 +61,7 @@
         android:layout_alignParentStart="true"
         android:gravity="center_horizontal"
         android:text="Show me something new                                          Show me what I like"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"

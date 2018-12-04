@@ -69,7 +69,7 @@ public class RecommendationAlgorithm
             probs[i] = this.genreDataList.get(i).getGenreAmount();
             total += this.genreDataList.get(i).getGenreAmount();
         }
-        System.out.println("Alg pref: " + algPref);
+       // System.out.println("Alg pref: " + algPref);
 
         //change alg based on preferences
         int topGenre = getTopGenre(probs);

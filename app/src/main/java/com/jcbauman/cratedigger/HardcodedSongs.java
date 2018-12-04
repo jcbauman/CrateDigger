@@ -674,6 +674,79 @@ public class HardcodedSongs extends  DisplaySong
         songObject.setSongSpotifyLink("https://open.spotify.com/track/4CizK36Hxq8tYxi5qYypfN?si=xfjp9LjPTgmB0x00gdHTnA");
         this.addSongObject(songObject);
 
+        songObject = new SongObject();
+        songObject.setSongArtist("Curtis Mayfield");
+        songObject.setSongName("Move On Up - Extended Version");
+        songObject.setSongImageURL("https://i.scdn.co/image/6fc5451b2078355fa9ac3b2912941cff7abd1af8");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/070c80b7f6d20ada50ea676d9400a7b0de85a34e?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Soul/Funk/R&B");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/01gDLZsi0j5fWC28FLPNO8?si=jRJhsNlHTzOTC2rx-7665Q");
+        this.addSongObject(songObject);
+
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Central Line");
+        songObject.setSongName("Walking Into Sunshine");
+        songObject.setSongImageURL("https://i.scdn.co/image/041db1f5a78a481889041555631c342e441a9b48");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/eacfbe81fa943479e28da2acc1b77f3a3a9008b9?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Soul/Funk/R&B");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/3S1HQf9rj1iHF0NIaiJ2vQ?si=DXy3ecjlSJuvL2bso0o9jw");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("The Bar-Kays");
+        songObject.setSongName("Soul Finger");
+        songObject.setSongImageURL("https://i.scdn.co/image/b02559e432fb1ad40b82150d64a3a77aa4b3846e");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/d4d605bea1f142ba5a8f2981385bb1aa04434d2d?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Soul/Funk/R&B");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/085diW9d1iWe9qeNQiDYOw?si=whhxPnXSQQOTNsipL7kr9w");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Aretha Franklin");
+        songObject.setSongName("Chain of Fools");
+        songObject.setSongImageURL("https://i.scdn.co/image/aa0f7a355022cddd3d6f0faf99dd36d3c9805a9c");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/f344db923db1a5fb61b2371d91574ebe123de0e6?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Soul/Funk/R&B");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/2oZmMp5M6L0Rh7G84Um2tF?si=6Zv_Gn6-Tk-SmvMQTzcHCw");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("Lyn Collins");
+        songObject.setSongName("Think (About It)");
+        songObject.setSongImageURL("https://i.scdn.co/image/054e491055e751c45a09b4e94d1a6821ca31a338");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/dbb0d0d275988efb8f6cc00ebfeb2699af7c82c8?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Soul/Funk/R&B");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/1kG2PZ8geznbDA8I6iWeDi?si=vLOWp4aYTYSm9avng9bxJA");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("James Brown");
+        songObject.setSongName("Papa's Got a Brand New Bag");
+        songObject.setSongImageURL("https://i.scdn.co/image/f1d56ecf420c67b42cca4699b8d42c623bfa4c34");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/ce9988e7633cf9bb3d557c12152cb48270c9d151?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Soul/Funk/R&B");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/6v4gV9s0pnwKbmF1yk5knO?si=LYg_XDcpTYOWceRLPUPqDg");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("The Jackson 5");
+        songObject.setSongName("ABC");
+        songObject.setSongImageURL("https://i.scdn.co/image/aa695769a003591911e34b4af4939e0a54775366");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/18805083af5571fc672f9b99054348948f3afec4?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Soul/Funk/R&B");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/6wDviYDtmSDZ0S6TVMM9Vc?si=xUwtI02qTqSz3zRVYHyJSA");
+        this.addSongObject(songObject);
+
+        songObject = new SongObject();
+        songObject.setSongArtist("The Temptations");
+        songObject.setSongName("Cloud Nine");
+        songObject.setSongImageURL("https://i.scdn.co/image/51bc5090cf941b055693bf1b78d8ef0276a5c12e");
+        songObject.setSongPreviewURL("https://p.scdn.co/mp3-preview/1fba80d1e39cadb577324d2aa0cdaf9d4290eafd?cid=774b29d4f13844c495f206cafdad9c86");
+        songObject.setSongGenre("Soul/Funk/R&B");
+        songObject.setSongSpotifyLink("https://open.spotify.com/track/1A8gqfrso63AC4XVW6DTTw?si=cWe0ka1hQdmS2ic8qbQc8A");
+        this.addSongObject(songObject);
+
 //        songObject = new SongObject();
 //        songObject.setSongArtist("");
 //        songObject.setSongName("");

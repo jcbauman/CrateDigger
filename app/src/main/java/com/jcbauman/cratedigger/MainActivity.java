@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Crate Digger");
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(100);
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

@@ -55,7 +55,7 @@ public class LikedSongActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Object o = gridView.getItemAtPosition(position);
                 SongObject oo = (SongObject) o;
-                System.out.println("SPOTIFY LINK: "+ oo.getSongSpotifyLink());
+                //System.out.println("SPOTIFY LINK: "+ oo.getSongSpotifyLink());
                 Uri uri = Uri.parse(oo.getSongSpotifyLink());
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
