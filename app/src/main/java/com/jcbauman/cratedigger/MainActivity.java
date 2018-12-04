@@ -1,5 +1,6 @@
 package com.jcbauman.cratedigger;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -55,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
     // SQLiteHelper
     SQLiteDBHelper dbHelper = null;
 
+    // Context
+//    Context context = MainActivity.this;
+
     // TEST CODE END 2
 
     @Override
@@ -78,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         final HardcodedSongs hardcodedSongs = new HardcodedSongs();
+        List<SongObject> songObjectList = new ArrayList<SongObject>();
 
         Collections.shuffle(hardcodedSongs.getSongObjectsList());
 
@@ -121,9 +126,18 @@ public class MainActivity extends AppCompatActivity {
                 //Do something on the left!
                 //You also have access to the original object.
                 //If you want to use it just cast it (String) dataObject
+                SongObject song = (SongObject) dataObject;
+                song.setSongLiked(0);
+                dbHelper.addSong(song);
 
                 // TEST CODE START 5
-                hardcodedSongs.dislikedSong();
+
+                RecommendationAlgorithm test = new RecommendationAlgorithm();
+                test.setGenreDataList(dbHelper.getGenreData());
+                System.out.println("LOOK OVER HERE FUCKER!!!! " + "BIAS = " + test.generateBias());
+                System.out.println("LOOK OVER HERE MAN!!!! " + dbHelper.songSeen("https://open.spotify.com/track/7e89621JPkKaeDSTQ3avtg"));
+
+//                hardcodedSongs.dislikedSong();
                 Toast.makeText(MainActivity.this, "Disliked", Toast.LENGTH_SHORT).show();
                 // TEST CODE END 5
             }
@@ -131,14 +145,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onRightCardExit(Object dataObject) {
                 // TEST CODE START 6
-                dbHelper.addSong((SongObject) dataObject);
+                SongObject song = (SongObject) dataObject;
+                song.setSongLiked(1);
+                dbHelper.addSong(song);
                 List<SongObject> songObjects = dbHelper.getAllSongs();
-                for(int i = 0; i < songObjects.size(); i++)
-                {
-                    System.out.println("LOOK OVER HERE!!!!!!!!!!!!!! " + songObjects.get(i).getSongName());
-                }
 
-                hardcodedSongs.likedSong();
+//                hardcodedSongs.likedSong();
                 // TEST CODE END 6
                 Toast.makeText(MainActivity.this, "Liked", Toast.LENGTH_SHORT).show();
             }

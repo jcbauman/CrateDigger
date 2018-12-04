@@ -44,7 +44,7 @@ public class LikedSongActivity extends AppCompatActivity {
         //list.clear();
         dbHelper = new SQLiteDBHelper(LikedSongActivity.this);
         dbHelper.getWritableDatabase();
-        list = dbHelper.getAllSongs();
+        list = dbHelper.getLikedSongs();
 
         adapter = new LikedSongListAdapter(this, R.layout.liked_song_list_item, list);
         gridView.setAdapter(adapter);
@@ -62,6 +62,7 @@ public class LikedSongActivity extends AppCompatActivity {
             }
         });
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.likes,menu);
