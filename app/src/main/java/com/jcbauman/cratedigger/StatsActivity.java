@@ -96,7 +96,7 @@ public class StatsActivity extends AppCompatActivity {
         int rock = 0, soul = 0, hip = 0, alt = 0, electro = 0, world = 0, other = 0;
         dbHelper = new SQLiteDBHelper(StatsActivity.this);
         dbHelper.getWritableDatabase();
-        ArrayList<SongObject> list = dbHelper.getAllSongs();
+        ArrayList<SongObject> list = dbHelper.getLikedSongs();
         if(list.size() > 0) {
             for (SongObject songo : list) {
                 String genre = songo.getSongGenre();
