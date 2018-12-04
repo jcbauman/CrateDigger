@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         final HardcodedSongs hardcodedSongs = new HardcodedSongs();
+        List<SongObject> songObjectList = new ArrayList<SongObject>();
 
         Collections.shuffle(hardcodedSongs.getSongObjectsList());
 
@@ -134,8 +135,9 @@ public class MainActivity extends AppCompatActivity {
                 RecommendationAlgorithm test = new RecommendationAlgorithm();
                 test.setGenreDataList(dbHelper.getGenreData());
                 System.out.println("LOOK OVER HERE FUCKER!!!! " + "BIAS = " + test.generateBias());
+                System.out.println("LOOK OVER HERE MAN!!!! " + dbHelper.songSeen("https://open.spotify.com/track/7e89621JPkKaeDSTQ3avtg"));
 
-                hardcodedSongs.dislikedSong();
+//                hardcodedSongs.dislikedSong();
                 Toast.makeText(MainActivity.this, "Disliked", Toast.LENGTH_SHORT).show();
                 // TEST CODE END 5
             }
@@ -148,7 +150,7 @@ public class MainActivity extends AppCompatActivity {
                 dbHelper.addSong(song);
                 List<SongObject> songObjects = dbHelper.getAllSongs();
 
-                hardcodedSongs.likedSong();
+//                hardcodedSongs.likedSong();
                 // TEST CODE END 6
                 Toast.makeText(MainActivity.this, "Liked", Toast.LENGTH_SHORT).show();
             }

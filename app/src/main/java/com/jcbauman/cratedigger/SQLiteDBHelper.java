@@ -147,7 +147,17 @@ public class SQLiteDBHelper extends SQLiteOpenHelper
         return songObjectsList;
     }
 
-
+    public Boolean songSeen(String songLink){
+        SQLiteDatabase database = getWritableDatabase();
+        String query = "SELECT * FROM songs WHERE song_spotify_link = '" + songLink + "'";
+        Cursor data = database.rawQuery(query, null);
+        if(data.getCount() > 0)
+        {
+            System.out.println(data.getCount());
+            return true;
+        }
+        return false;
+    }
 
     public List<GenreData> getGenreData()
     {
