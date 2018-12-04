@@ -70,11 +70,16 @@ public class StatsActivity extends AppCompatActivity {
             yValues.add(new PieEntry(genreVals[6],"Other"));
         }
         if(genreVals[7]>0){
-            yValues.add(new PieEntry(genreVals[6],"Jazz"));
+            yValues.add(new PieEntry(genreVals[7],"Jazz"));
         }
         //add in case of empty set
+        genreText = (TextView)findViewById(R.id.genreMessage);
         if(yValues.size()==0) {
             yValues.add(new PieEntry(34f, "No songs liked yet"));
+            genreText.setText("Swipe on more songs to see your stats.");
+        }
+        else{
+            genreText.setText("You have been digging the '" + getTopGenre(genreVals) + "' genre most.");
         }
 
         pieChart.animateY(1000, Easing.EasingOption.EaseInOutCirc);
@@ -95,13 +100,6 @@ public class StatsActivity extends AppCompatActivity {
         data.setValueTextColor(Color.BLACK);
 
         pieChart.setData(data);
-        genreText = (TextView)findViewById(R.id.genreMessage);
-        if(yValues.size()==0) {
-            genreText.setText("Swipe on more songs to see your stats.");
-        }
-        else{
-            genreText.setText("You dig the '" + getTopGenre(genreVals) + "' genre most.");
-        }
     }
 
     public int[] getGenreStatistics(){

@@ -91,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         Collections.shuffle(hardcodedSongs.getSongObjectsList());
         hardcodedSongos = hardcodedSongs.getSongObjectsList();
 
-        for(int i = 0; i < 5; i++)
+        for(int i = 0; i < 3; i++)
         {
             songObjectList.add(hardcodedSongos.get(0));
             hardcodedSongos.remove(0);
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
                 // TEST CODE START 5
 
                 addNextSong();
-                Toast.makeText(MainActivity.this, "Disliked", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(MainActivity.this, "Disliked", Toast.LENGTH_SHORT).show();
                 // TEST CODE END 5
             }
 
@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
 
                 addNextSong();
                 // TEST CODE END 6
-                Toast.makeText(MainActivity.this, "Liked", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Liked!", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -169,15 +169,25 @@ public class MainActivity extends AppCompatActivity {
             public void addNextSong() {
                 // Ask for more data here
 
-                // TEST CODE START 4
-                HardcodedSongs newHardcodedSongs = new HardcodedSongs();
-                List<SongObject> newSongObjects = newHardcodedSongs.getSongObjectsList();
+                if(hardcodedSongos.size()>0) {
+                    // TEST CODE START 4
+                    HardcodedSongs newHardcodedSongs = new HardcodedSongs();
+                    List<SongObject> newSongObjects = newHardcodedSongs.getSongObjectsList();
 
-                //recommendation algorithm here:
-                RecommendationAlgorithm rec = new RecommendationAlgorithm();
-                rec.setGenreDataList(dbHelper.getGenreData());
-                songObjectList.add(getNextSongOfGenre(rec.generateBias(),hardcodedSongos));
-
+                    //recommendation algorithm here:
+                    RecommendationAlgorithm rec = new RecommendationAlgorithm();
+                    rec.setGenreDataList(dbHelper.getGenreData());
+                    songObjectList.add(getNextSongOfGenre(rec.generateBias(), hardcodedSongos));
+                }
+                else{
+                    hardcodedSongs = new HardcodedSongs();
+                    hardcodedSongos = hardcodedSongs.getSongObjectsList();
+                    for(int i = 0; i < hardcodedSongos.size(); i++)
+                    {
+                        songObjectList.add(hardcodedSongos.get(0));
+                        hardcodedSongos.remove(0);
+                    }
+                }
                 // TEST CODE END 4
             }
 
