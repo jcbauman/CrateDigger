@@ -146,4 +146,115 @@ public class SQLiteDBHelper extends SQLiteOpenHelper
         db.close();
         return songObjectsList;
     }
+
+
+
+    public List<GenreData> getGenreData()
+    {
+//        GenreData topGenre = null;
+
+        GenreData rockGenre = new GenreData("Rock", 1);
+        GenreData soulFunkRBGenre = new GenreData("Soul/Funk/R&B", 1);
+        GenreData hipHopRapGenre = new GenreData("Hip-Hop/Rap", 1);
+        GenreData alternativeIndieGenre = new GenreData("Alternative/Indie", 1);
+        GenreData danceElectronicGenre = new GenreData("Dance/Electronic", 1);
+        GenreData worldGenre = new GenreData("World", 1);
+        GenreData otherGenre = new GenreData("Other", 1);
+        GenreData jazzGenre = new GenreData("Jazz", 1);
+
+        String selectQuery = "SELECT * FROM " + TABLE_NAME
+                + " ORDER BY " + KEY_SONG_ID + " DESC";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // Loop through the table rows
+        do
+        {
+            if(cursor.getInt(8) == 1) {
+                String currentGenre = cursor.getString(4);
+                if(currentGenre.equals("Rock"))
+                {
+                    rockGenre.incrementGenreAmount();
+                }
+                else if(currentGenre.equals("Soul/Funk/R&B"))
+                {
+                    soulFunkRBGenre.incrementGenreAmount();
+                }
+                else if(currentGenre.equals("Hip-Hop/Rap"))
+                {
+                    hipHopRapGenre.incrementGenreAmount();
+                }
+                else if(currentGenre.equals("Alternative/Indie"))
+                {
+                    alternativeIndieGenre.incrementGenreAmount();
+                }
+                else if(currentGenre.equals("Dance/Electronic"))
+                {
+                    danceElectronicGenre.incrementGenreAmount();
+                }
+                else if(currentGenre.equals("World"))
+                {
+                    worldGenre.incrementGenreAmount();
+                }
+                else if(currentGenre.equals("Other"))
+                {
+                    otherGenre.incrementGenreAmount();
+                }
+                else if(currentGenre.equals("Jazz"))
+                {
+                    jazzGenre.incrementGenreAmount();
+                }
+            }
+        } while(cursor.moveToNext());
+
+        List<GenreData> genreDataList = new ArrayList<GenreData>();
+        genreDataList.add(rockGenre);
+        genreDataList.add(soulFunkRBGenre);
+        genreDataList.add(hipHopRapGenre);
+        genreDataList.add(alternativeIndieGenre);
+        genreDataList.add(danceElectronicGenre);
+        genreDataList.add(worldGenre);
+        genreDataList.add(otherGenre);
+        genreDataList.add(jazzGenre);
+
+//        topGenre = rockGenre;
+
+//        for(int i = 1; i < genreDataList.size(); i++)
+//        {
+//            if(genreDataList.get(i).getGenreAmount() > topGenre.getGenreAmount())
+//            {
+//                topGenre = genreDataList.get(i);
+//            }
+//        }
+
+        db.close();
+        return genreDataList;
+    }
+}
+
+class GenreData
+{
+    private String genreName;
+    private int genreAmount;
+
+    public GenreData(String genre, int amount)
+    {
+        this.genreName = genre;
+        this.genreAmount = amount;
+    }
+
+    public String getGenreName()
+    {
+        return this.genreName;
+    }
+
+    public int getGenreAmount()
+    {
+        return this.genreAmount;
+    }
+
+    public void incrementGenreAmount()
+    {
+        this.genreAmount++;
+    }
 }
