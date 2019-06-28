@@ -1,6 +1,6 @@
 # Crate Digger
-### CS 121 Final Report
-### Jack Bauman, Young Choe, Ismael Chavez III
+###### CS 121 Final Report
+###### Jack Bauman, Young Choe, Ismael Chavez III
 
 ### Abstract
 In this final report, we will demonstrate the objective behind our development of the Android application, Crate Digger, as well as go into the specifics of its components, development process, and its future potential.  We will also discuss the contributions each of our group members made towards its development in this class.
